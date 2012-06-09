@@ -1,0 +1,35 @@
+{
+  "name": "redsmin",
+  "description": "Redsmin daemon for the Redsmin service",
+  "version": "0.1.0",
+  "keywords": [
+    "redis",
+    "redsmin",
+    "proxy"
+  ],
+  "author": "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com)",
+  "contributors": [],
+  "homepage": "http://invite.redsmin.com",
+  "preferGlobal": true,
+  "main": "index",
+  "bugs": {
+    "url": "https://github.com/FGRibreau/redsmin/issues",
+    "email": "bugs@redsmin.com"
+  },
+  "scripts": {
+    "start": "node ./bin/redsmin-daemon.js"
+  },
+  "bin": "./bin/redsmin-daemon.js",
+  "dependencies": {
+    "optimist": "~0.3.4",
+    "lodash": "~0.3.0",
+    "socket.io-client": "~0.9.6"
+  },
+  "engines": {
+    "node": ">=0.4.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FGRibreau/redsmin.git"
+  }
+}
