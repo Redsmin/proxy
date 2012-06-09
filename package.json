@@ -17,13 +17,19 @@
     "email": "bugs@redsmin.com"
   },
   "scripts": {
-    "start": "node ./bin/redsmin-daemon.js"
+    "start": "node ./bin/redsmin.js"
   },
-  "bin": "./bin/redsmin-daemon.js",
+  "bin": "./bin/redsmin.js",
+  
   "dependencies": {
     "optimist": "~0.3.4",
     "lodash": "~0.3.0",
-    "socket.io-client": "~0.9.6"
+    "winston": "~0.6.1",
+    "backoff": "0.0.2"
+  },
+  "devDependencies": {
+    "sinon": "~1.3.4",
+    "growl": "~1.5.1"
   },
   "engines": {
     "node": ">=0.4.6"
