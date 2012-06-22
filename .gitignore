@@ -2,3 +2,4 @@
 node_modules/
 etc/*_dev.json
 log/*
+test_results
