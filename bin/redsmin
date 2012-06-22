@@ -1,0 +1,79 @@
+#!/usr/bin/env node
+
+var log = require('../lib/log')('info'),
+  config = require('../lib/config'),
+  daemon = require("daemonize").setup({
+    main: "../app.js",
+    name: "redsmin",
+    pidfile:"../redsmin.pid",
+    silent: true
+  });
+
+
+daemon.on("starting", function() {
+  log.info("Starting redsmin daemon...");
+}).on("started", function(pid) {
+  log.info("Redsmin daemon started. PID: " + pid);
+}).on("stopping", function() {
+  log.info("Stopping redsmin daemon...");
+}).on("stopped", function(pid) {
+  log.info("Redsmin daemon stopped.");
+}).on("running", function(pid) {
+  log.info("Redsmin daemon already running. PID: " + pid);
+}).on("notrunning", function() {
+  log.info("Redsmin daemon is not running");
+}).on("error", function(err) {
+  log.error("Redsmin daemon failed to start:  " + err.message);
+});
+
+
+switch (process.argv[2]) {
+
+case "start":
+  // This will trigger an error is something is with the configuration
+  config();
+
+  daemon.start().once("started", function() {
+    process.exit();
+  });
+  break;
+
+case "stop":
+  daemon.stop();
+  break;
+
+case "edit":
+  console.log("Edit the configuration file ", config.jsonFilename, " if necessary");
+  break;
+
+case "kill":
+  daemon.kill();
+  break;
+
+case "restart":
+  if (daemon.status()) {
+    daemon.stop().once("stopped", function() {
+      daemon.start().once("started", function() {
+        process.exit();
+      });
+    });
+  } else {
+    daemon.start().once("started", function() {
+      process.exit();
+    });
+  }
+  break;
+
+  // case "reload":
+  //     console.log("Reload.");
+  //     daemon.sendSignal("SIGUSR1");
+  //     break;
+case "status":
+  var pid = daemon.status();
+  if (pid) console.log("Redmsin daemon running. PID: " + pid);
+  else console.log("Redsmin daemon is not running.");
+  break;
+
+default:
+  console.log("Usage: [start|stop|kill|edit|restart|reload|status]");
+}

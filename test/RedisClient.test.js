@@ -9,28 +9,33 @@ function tcreateConnection(t, host, hostname){
       t.equal(_hostname, hostname);
     }
     cb();
-    return new (require('events').EventEmitter)();
+
+    return _.extend({
+      write: function(){}
+    , destroy:function(){}
+    , setKeepAlive:function(){}
+    , setNoDelay:function(){}
+    , setTimeout:function(){}
+    }, new (require('events').EventEmitter)());
   };
 }
 
 function stubRedsminEndpoint(fn){
-  return {
-    write:fn || function(){}
-  };
+  return fn || function(){};
 }
 
+// Quiet console output
+RedisClient.log = sinon.stub(_.clone(console));
 
 var R = null;
 exports['RedisClient'] = {
   setUp: function(done) {
     // setup here
-    // R = RedisClient.connect('127.0.0.1');
-    RedisClient.log = sinon.stub(_.clone(console));
     done();
   },
   tearDown: function (callback) {
     // clean up
-    RedisClient.log = console;
+    //RedisClient.log = console;
     callback();
   },
 
@@ -49,7 +54,7 @@ exports['RedisClient'] = {
   connect:function(t){
     t.expect(5);
 
-    var host = 6379;
+    var host = 6378;
     var hostname = '127.0.0.1';
 
     RedisClient.net.createConnection = tcreateConnection(t, host, hostname);
@@ -62,9 +67,14 @@ exports['RedisClient'] = {
     });
 
     t.equal(R.connected, false);
-    R.connect('redis://127.0.0.1:6379');
+    R.connect('redis://127.0.0.1:6378');
   },
 
+  /**
+   * onData from redis
+   * @param  {[type]} t [description]
+   * @return {[type]}   [description]
+   */
   'onData': function(t){
     t.expect(1);
 
@@ -75,6 +85,25 @@ exports['RedisClient'] = {
 
     R.onData('test data');
   },
+
+  /**
+   * write data to redis
+   */
+   'write': function(t){
+    t.expect(1);
+
+    RedisClient.net.createConnection = tcreateConnection();
+    var R = new RedisClient(stubRedsminEndpoint());
+
+    R.connect('redis://127.0.0.1:6378');
+
+    var spy = sinon.spy(R.socket, 'write');
+
+    R.write('KEYS *');
+
+    t.ok(spy.calledWith('KEYS *'),"write to redis");
+    t.done();
+   },
 
   'onClose': function(t){
     t.expect(1);
@@ -91,7 +120,7 @@ exports['RedisClient'] = {
       R.onClose(new Error('close'));
     }));
 
-    R.connect('redis://127.0.0.1:6379');
+    R.connect('redis://127.0.0.1:6378');
   },
 
   'onClose (reconnect)': function(t){
@@ -116,12 +145,13 @@ exports['RedisClient'] = {
       process.nextTick(_.bind(R.onClose, R, new Error('close')));
     });
 
-    R.connect('redis://127.0.0.1:6379');
+    R.connect('redis://127.0.0.1:6378');
   },
 
   'onError': function(t){
     var R = new RedisClient(stubRedsminEndpoint());
-    R.onError();
+    t.expect(1);
+    t.doesNotThrow(function(){R.onError();});
     t.done();
   }
 };

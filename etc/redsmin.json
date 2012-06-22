@@ -1,0 +1,8 @@
+{
+  // put here your server key
+  "key":"insert_your_key_here"
+
+  // local redis instance connection string.
+  // in most case you shouldn't have to change this
+,  "redis":"redis://127.0.0.1:6379"
+}
