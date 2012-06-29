@@ -138,7 +138,7 @@ exports['Endpoint'] = {
     E.connect(port, hostname);
   },
 
-  'onData (with error)': function(t){
+  'onData (handhsake with error)': function(t){
     t.expect(2);
 
     var E        = this.E
@@ -146,14 +146,14 @@ exports['Endpoint'] = {
     ,   port     = 433;
 
     Endpoint.tls.connect = tconnect();
+    var processExit = sinon.stub(process, 'exit');
 
     E.on('connect', function(){
-      var spy = sinon.spy(E.handshakenBackoff, 'backoff');
       E.onData('{"error":"oups user not found"}');
 
       t.equal(E.handshaken, false);
-      t.ok(spy.calledOnce, "backoff called");
 
+      t.ok(processExit.calledOnce, "backoff called");
       t.done();
     });
 

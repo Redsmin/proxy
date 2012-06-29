@@ -1,4 +1,4 @@
-Redsmin daemon [![Build Status](https://secure.travis-ci.org/FGRibreau/redsmin.png)](http://travis-ci.org/FGRibreau/redsmin)
+Redsmin daemon [![Build Status](https://secure.travis-ci.org/Redsmin/redsmin.png)](http://travis-ci.org/Redsmin/redsmin)
 =============
 
 Simple proxy to expose a local redis instance to the [redsmin](https://redsmin.com) service.
