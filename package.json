@@ -1,7 +1,7 @@
 {
   "name": "redsmin",
   "description": "Redsmin daemon for the Redsmin service",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "keywords": [
     "redis",
     "redsmin",
@@ -9,11 +9,11 @@
   ],
   "author": "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com)",
   "contributors": [],
-  "homepage": "http://invite.redsmin.com",
+  "homepage": "https://redsmin.com",
   "preferGlobal": true,
   "main": "index",
   "bugs": {
-    "url": "https://github.com/FGRibreau/redsmin/issues",
+    "url": "https://github.com/Redsmin/redsmin/issues",
     "email": "bugs@redsmin.com"
   },
   "scripts": {
@@ -39,6 +39,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/FGRibreau/redsmin.git"
+    "url": "git://github.com/Redsmin/redsmin.git"
   }
 }
