@@ -5,7 +5,7 @@ var log = require('../lib/log')('info'),
   daemon = require("daemonize").setup({
     main: "../app.js",
     name: "redsmin",
-    pidfile:"../redsmin.pid",
+    pidfile:"redsmin.pid",
     silent: true
   });
 

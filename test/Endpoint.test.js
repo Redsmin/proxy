@@ -146,7 +146,8 @@ exports['Endpoint'] = {
     ,   port     = 433;
 
     Endpoint.tls.connect = tconnect();
-    var processExit = sinon.stub(process, 'exit');
+
+    var processExit = Endpoint.process.exit = sinon.spy();
 
     E.on('connect', function(){
       E.onData('{"error":"oups user not found"}');
@@ -178,6 +179,33 @@ exports['Endpoint'] = {
       t.equal(E.handshaken, true, "should now be handshaken");
 
       t.ok(!spy.called, "it's the handshake datas shouldn't be written to the client");
+
+      t.done();
+    });
+
+    E.connect(port, hostname);
+  },
+
+  'onData (handshake merge with info)': function(t){
+    t.expect(3);
+
+    var E        = this.E
+    ,   hostname = 'ssl.redsmin.dev'
+    ,   port     = 433
+    ,   redisInfo = "*1\n$4\ninfo";
+
+    Endpoint.tls.connect = tconnect();
+
+    E.on('connect', function(){
+      var spy = sinon.spy(E, 'fnWrite');
+
+      t.equal(E.handshaken, false, "shouldn't be handshaken at this stage");
+
+      E.onData("{\"success\":\"true\"}"+redisInfo);
+
+      t.equal(E.handshaken, true, "should now be handshaken");
+
+      t.ok(spy.calledWith(redisInfo), "the command has the right arguments");
 
       t.done();
     });
