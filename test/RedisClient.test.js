@@ -28,9 +28,12 @@ function stubRedsminEndpoint(fn){
 RedisClient.log = sinon.stub(_.clone(console));
 
 var R = null;
+var endpoint = null;
 exports['RedisClient'] = {
   setUp: function(done) {
     // setup here
+    endpoint = stubRedsminEndpoint();
+    R = new RedisClient(endpoint);
     done();
   },
   tearDown: function (callback) {
@@ -47,7 +50,6 @@ exports['RedisClient'] = {
   },
 
   constructor:function(t){
-    var R = new RedisClient(stubRedsminEndpoint());
     t.done();
   },
 
@@ -58,7 +60,6 @@ exports['RedisClient'] = {
     var hostname = '127.0.0.1';
 
     RedisClient.net.createConnection = tcreateConnection(t, host, hostname);
-    var R = new RedisClient(stubRedsminEndpoint());
 
     R.on('connect', function(){
       t.ok(true, 'connected');
@@ -78,7 +79,7 @@ exports['RedisClient'] = {
   'onData': function(t){
     t.expect(1);
 
-    var R = new RedisClient(stubRedsminEndpoint(function fnWrite(data){
+    R = new RedisClient(stubRedsminEndpoint(function fnWrite(data){
       t.equal(data, 'test data');
       t.done();
     }));
@@ -93,7 +94,6 @@ exports['RedisClient'] = {
     t.expect(1);
 
     RedisClient.net.createConnection = tcreateConnection();
-    var R = new RedisClient(stubRedsminEndpoint());
 
     R.connect('redis://127.0.0.1:6378');
 
@@ -109,7 +109,6 @@ exports['RedisClient'] = {
     t.expect(1);
 
     RedisClient.net.createConnection = tcreateConnection();
-    var R = new RedisClient(stubRedsminEndpoint());
 
     R.on('close', function(){
       t.equal(R.connected, false);
@@ -128,7 +127,7 @@ exports['RedisClient'] = {
 
     RedisClient.net.createConnection = tcreateConnection();
 
-    var R = new RedisClient(stubRedsminEndpoint(), {initialTimeout: 1,maxTimeout: 10});
+    R = new RedisClient(stubRedsminEndpoint(), {initialTimeout: 1,maxTimeout: 10});
 
     var spy = sinon.spy(R, "onConnected");
 
@@ -146,6 +145,19 @@ exports['RedisClient'] = {
     });
 
     R.connect('redis://127.0.0.1:6378');
+  },
+
+  'Reconnect': function(t){
+    t.expect(1);
+    // Simulate that the backoff will always directly hit reconnect
+    R.backoff.backoff = function(){R.reconnect();};
+
+    R._connect = function(){
+      t.equal(R.connected, false);
+      t.done();
+    };
+
+    R.onClose();
   },
 
   'onError': function(t){
