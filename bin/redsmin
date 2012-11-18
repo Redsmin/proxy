@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 
-var log = require('../lib/log')('info'),
+var log  = require('../lib/log')('info'),
   config = require('../lib/config'),
-  daemon = require("daemonize").setup({
-    main: "../app.js",
-    name: "redsmin",
-    pidfile:"redsmin.pid",
+  p      = require('path'),
+  daemon = require("daemonize2").setup({
+    main:    p.resolve(__dirname, "../app.js"),
+    name:    "redsmin",
+    pidfile: p.resolve(__dirname, "../etc/redsmin.pid"),
     silent: true
   });
+
+log.cli();
 
 
 daemon.on("starting", function() {

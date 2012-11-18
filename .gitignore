@@ -1,6 +1,6 @@
 .DS_Store
 node_modules/
 etc/*_dev.json
-log/*
+etc/*.log
+etc/*.pid
 test_results
-*.pid
