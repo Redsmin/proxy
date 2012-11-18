@@ -5,10 +5,8 @@
  *
  */
 
-// Dependencies
-var config     = require(__dirname+'/lib/config')()
-,   Proxy      = require(__dirname+'/lib/Proxy');
-
+var config = require(__dirname+'/lib/config')();
+var Proxy  = require(__dirname+'/lib/Proxy');
 
 // Start the proxy
-new Proxy(config.redis, config.key).start();
+new Proxy(config).start();

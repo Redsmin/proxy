@@ -3,6 +3,7 @@
 var log  = require('../lib/log')('info'),
   config = require('../lib/config'),
   p      = require('path'),
+  fs     = require('fs'),
   daemon = require("daemonize2").setup({
     main:    p.resolve(__dirname, "../app.js"),
     name:    "redsmin",
@@ -29,12 +30,21 @@ daemon.on("starting", function() {
   log.error("Redsmin daemon failed to start:  " + err.message);
 });
 
+function usage(){
+  log.info("Usage: [start|stop|kill|set_key|path|restart|reload|status]");
+}
+
+if(!process.argv[2]){
+  return usage();
+}
 
 switch (process.argv[2]) {
 
 case "start":
-  // This will trigger an error is something is with the configuration
-  config();
+  // This will trigger an error if there is something with the configuration
+  if(!config()){
+    process.exit(1);
+  }
 
   daemon.start().once("started", function() {
     process.exit();
@@ -45,13 +55,28 @@ case "stop":
   daemon.stop();
   break;
 
-case "edit":
-  console.log("Edit the configuration file ", config.jsonFilename, " if necessary");
+case "set_key":
+  if(!process.env.RKEY){
+    return log.info('Usage: RKEY=REDSMIN_CONNECTION_KEY [RURL=redis://127.0.0.1:6379] redsmin set_key');
+  }
+
+  config.write(process.env.RKEY, process.env.RURL, process.env.RAUTH, function(err){
+    if(err){
+      log.error("Could not write the configuration file", err);
+      return process.exit(1);
+    }
+
+    log.info("Configuration file written");
+  });
   break;
+
+case "path":
+  console.log(p.resolve(__dirname, '../'));
+break;
 
 case "kill":
   daemon.kill();
-  break;
+break;
 
 case "restart":
   if (daemon.status()) {
@@ -67,16 +92,12 @@ case "restart":
   }
   break;
 
-  // case "reload":
-  //     console.log("Reload.");
-  //     daemon.sendSignal("SIGUSR1");
-  //     break;
 case "status":
   var pid = daemon.status();
-  if (pid) console.log("Redmsin daemon running. PID: " + pid);
-  else console.log("Redsmin daemon is not running.");
+  if (pid) log.info("Redmsin daemon running. PID: " + pid);
+  else log.error("Redsmin daemon is not running.");
   break;
 
 default:
-  console.log("Usage: [start|stop|kill|edit|restart|reload|status]");
+ usage();
 }

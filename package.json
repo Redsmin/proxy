@@ -1,7 +1,7 @@
 {
   "name": "redsmin",
   "description": "Redsmin daemon for the Redsmin service",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "keywords": [
     "redis",
     "redsmin",
@@ -17,8 +17,8 @@
     "email": "bugs@redsmin.com"
   },
   "scripts": {
-    "start": "node ./bin/redsmin"
-  , "test":"nodeunit test/*.js"
+    "start": "node ./bin/redsmin",
+    "test": "nodeunit test/*.js"
   },
   "bin": {
     "redsmin": "./bin/redsmin"
