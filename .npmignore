@@ -1,3 +1,4 @@
 test
 test_results
 node_modules
+etc/*_dev.json
