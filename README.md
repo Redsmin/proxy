@@ -3,7 +3,7 @@ Redsmin daemon [![Build Status](https://secure.travis-ci.org/Redsmin/redsmin.png
 
 Simple proxy to expose a local redis instance to the [redsmin](https://redsmin.com) service.
 
-We're still actively developing this proxy and the reddish service so please update often.
+We're still actively developing this proxy and the redsmin service so please update often.
 
 We'll announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin).
 
