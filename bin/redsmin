@@ -16,6 +16,7 @@ log.cli();
 
 daemon.on("starting", function() {
   log.info("Starting redsmin daemon...");
+  log.debug("Connecting on Redis at "+ config().redis);
 }).on("started", function(pid) {
   log.info("Redsmin daemon started. PID: " + pid);
 }).on("stopping", function() {
@@ -28,6 +29,12 @@ daemon.on("starting", function() {
   log.info("Redsmin daemon is not running");
 }).on("error", function(err) {
   log.error("Redsmin daemon failed to start:  " + err.message);
+  log.error("-- Please create a report with the following text --");
+  // log.info();
+  // try{
+
+  // }
+  // fs.readFileSync(p.resolve(__dirname, '../etc/log.log'), );
 });
 
 function usage(){
