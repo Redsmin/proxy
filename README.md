@@ -7,18 +7,20 @@ We're still actively developing this proxy and the Redsmin service so please upd
 
 We'll announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin).
 
-[Installation](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from-)
-------------
+### [Installation](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from-)
 
-`set_key` options
----------------
+
+### CLI options
 
 ```bash
 RKEY=REDSMIN_CONNECTION_KEY [RURL=redis://127.0.0.1:6379] [RAUTH=password] redsmin set_key
 ```
 
-History
--------
+
+
+------------------
+
+### History
 
 v0.3.3 (02/20/2013)
  * Support for `RAUTH` env variable, must be used with `set_key` to setup an authentication.
