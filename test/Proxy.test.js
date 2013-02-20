@@ -7,9 +7,6 @@ Proxy.log         = sinon.stub(_.clone(console));
 
 exports['Proxy'] = {
   setUp: function(done) {
-    // setup here
-    //Endpoint.tls.connect = tconnect();
-    //this.E               = new Endpoint(stubLocalClient(), 'myKey');
     done();
   },
 

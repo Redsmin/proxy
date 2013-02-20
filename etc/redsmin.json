@@ -1,8 +1,14 @@
 {
-  // put here your server key
+  // Put here your Redsmin connection key
+  // 1 - Connect to Redsmin then "Add a redis instance"
+  // 2 - Select Redis Instance type: "Locally available"
+  // 3 - copy/paste the RKEY here
   "key":"insert_your_key_here"
 
   // local redis instance connection string.
-  // in most case you shouldn't have to change this
+  // in most case you should not have to change this
 ,  "redis":"redis://127.0.0.1:6379"
+  
+  // (optional) authentification
+,  "auth":""
 }

@@ -2,7 +2,6 @@
  * Redsmin proxy daemon
  * Francois-Guillaume Ribreau - @FGRibreau
  * redsmin.com
- *
  */
 
 var config = require(__dirname+'/lib/config')();

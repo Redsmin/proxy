@@ -94,6 +94,28 @@ exports['Endpoint'] = {
     E.connect(port, hostname);
   },
 
+  'connect with auth (with handshake)':function(t){
+    t.expect(3);
+
+    var E        = new Endpoint(stubLocalClient(), 'myKey', {auth:"passw_or_d"})
+    ,   hostname = 'ssl.redsmin.dev'
+    ,   port     = 433;
+
+    Endpoint.tls.connect = tconnect(null, null, null, function fnWrite(data){
+      t.equal(data, JSON.stringify({version:jsonPackage.version, key:E.key, auth:"passw_or_d"}));
+      t.equal(E.connected, true);
+    });
+
+    E.key = 'myKey';
+
+    E.on('connect', function(){
+      t.ok(true);
+      t.done();
+    });
+
+    E.connect(port, hostname);
+  },
+
   'connect (with handshake backoff)':function(t){
     t.expect(5);
 

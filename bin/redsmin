@@ -29,12 +29,11 @@ daemon.on("starting", function() {
   log.info("Redsmin daemon is not running");
 }).on("error", function(err) {
   log.error("Redsmin daemon failed to start:  " + err.message);
-  log.error("-- Please create a report with the following text --");
+  // log.error("-- Please create a report with the following text --");
   // log.info();
   // try{
-
-  // }
   // fs.readFileSync(p.resolve(__dirname, '../etc/log.log'), );
+  // }
 });
 
 function usage(){
@@ -64,7 +63,7 @@ case "stop":
 
 case "set_key":
   if(!process.env.RKEY){
-    return log.info('Usage: RKEY=REDSMIN_CONNECTION_KEY [RURL=redis://127.0.0.1:6379] redsmin set_key');
+    return log.info('Usage: RKEY=REDSMIN_CONNECTION_KEY [RURL=redis://127.0.0.1:6379] [RAUTH=password] redsmin set_key');
   }
 
   config.write(process.env.RKEY, process.env.RURL, process.env.RAUTH, function(err){
