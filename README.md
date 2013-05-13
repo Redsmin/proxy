@@ -16,7 +16,9 @@ We'll announce changes on our Twitter account [@redsmin](https://twitter.com/red
 RKEY=REDSMIN_CONNECTION_KEY [RURL=redis://127.0.0.1:6379] [RAUTH=password] redsmin set_key
 ```
 
+### I'm behind a firewall, what rule should I add ?
 
+Redsmin proxy connects to `ssl.redsmin.com` on port `443`, currently the socket connection is in plain text but SSL/TLS will be added really soon.
 
 ------------------
 
