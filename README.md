@@ -20,6 +20,10 @@ RKEY=REDSMIN_CONNECTION_KEY [RURL=redis://127.0.0.1:6379] [RAUTH=password] redsm
 
 Redsmin proxy connects to `ssl.redsmin.com` on port `443`, currently the socket connection is in plain text but SSL/TLS will be added really soon.
 
+### Uninstall
+
+```npm uninstall redsmin -g```
+
 ------------------
 
 ### History
