@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+  grunt.loadNpmTasks("grunt-bump");
   // Project configuration
   grunt.initConfig({
     pkg: '<json:package.json>',
@@ -32,6 +33,21 @@ module.exports = function(grunt) {
       }
     },
 
+    bump: {
+      options: {
+        files: ['package.json'],
+        updateConfigs: [],
+        commit: false,
+        commitMessage: 'Release v%VERSION%',
+        commitFiles: ['package.json'], // '-a' for all files
+        createTag: true,
+        tagName: 'v%VERSION%',
+        tagMessage: 'Version %VERSION%',
+        push: false,
+        pushTo: 'upstream'
+      }
+    },
+
     watch: {
       files: ['<config:lint.all>'],
       tasks: 'lint test'
@@ -40,17 +56,6 @@ module.exports = function(grunt) {
     test: {
       all: ['test/**/*.js']
     }
-  });
-
-  // http://blog.fgribreau.com/2012/06/how-to-get-growl-notifications-from.html
-  var growl = require('growl');
-  ['warn', 'fatal'].forEach(function(level) {
-    grunt.utils.hooker.hook(grunt.fail, level, function(opt) {
-      growl(opt.name, {
-        title: opt.message,
-        image: 'Console'
-      });
-    });
   });
 
   // Default task.
