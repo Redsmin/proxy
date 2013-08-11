@@ -27,7 +27,10 @@ Redsmin proxy connects to `ssl.redsmin.com` on port `993` with a secure [TLS soc
 
 ### Changelog
 
-#### 1.0.0 (07/21/2013)
+#### v1.0.4 (11/08/2013)
+ * Fix rare case of missing reconnection
+
+#### v1.0.0 (07/21/2013)
  * TLS support
  * Redsmin proxy now connects on ssl.redsmin.com:993
 
