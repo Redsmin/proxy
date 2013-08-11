@@ -4,6 +4,8 @@ var Endpoint    = require('../lib/Endpoint')
 ,   sinon       = require('sinon')
 ,   jsonPackage = JSON.parse(fs.readFileSync(__dirname + '/../package.json'));
 
+function noop(){}
+
 function tconnect(t, host, hostname, fnWriteStub){
   return function(_host, _hostname, cb){
     if(t){
@@ -14,17 +16,18 @@ function tconnect(t, host, hostname, fnWriteStub){
     process.nextTick(cb);
 
     return _.extend({
-          write: fnWriteStub || function(){}
-      ,   setTimeout:function(){}
-      ,   setNoDelay:function(){}
-      ,   destroy:function(){}
-      ,   setKeepAlive:function(){}
+          write: fnWriteStub || noop
+      ,   setTimeout:noop
+      ,   setNoDelay:noop
+      ,   destroy:noop
+      ,   setKeepAlive:noop
     }, new (require('events').EventEmitter)());
   };
 }
 
+
 function stubLocalClient(fn){
-  return fn || function(){};
+  return fn || noop;
 }
 
 // Quiet console output
@@ -35,6 +38,13 @@ exports['Endpoint'] = {
     // setup here
     Endpoint.tls.connect = tconnect();
     this.E               = new Endpoint(stubLocalClient(), 'myKey');
+
+    // Mock console
+    Endpoint.log = _.reduce(console, function(m, v, k){
+      m[k] = noop;
+      return m;
+    }, {debug:noop});
+
     done();
   },
 
@@ -328,7 +338,13 @@ exports['Endpoint'] = {
 
   'onError': function(t){
     var E = this.E;
-    t.expect(1);
+    t.expect(4);
+    E.socket = {
+      end: function(){
+        t.ok(true, "called");
+      }
+    };
+    t.doesNotThrow(function(){E.onError();});
     t.doesNotThrow(function(){E.onError('ok');});
     t.done();
   }
