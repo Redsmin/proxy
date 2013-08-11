@@ -70,7 +70,17 @@ exports['Endpoint'] = {
     E.connect(port, hostname);
 
   },
+  'connect without arguments shoudl throw an error':function(t){
+    t.expect(2);
+    t.throws(function(){
+      this.E.connect();
+    })
 
+    t.throws(function(){
+      this.E.connect(443);
+    })
+    t.done();
+  },
   'connect (with handshake)':function(t){
     t.expect(3);
 
