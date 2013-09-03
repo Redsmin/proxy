@@ -1,7 +1,7 @@
 {
   "name": "redsmin",
   "description": "Redsmin proxy daemon for the Redsmin service",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "keywords": [
     "redis",
     "redis-gui",

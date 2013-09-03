@@ -5,7 +5,7 @@ Redsmin proxy securely expose one [or more](https://redsmin.uservoice.com/knowle
 
 We're still actively developing this proxy and the Redsmin service so please update often.
 
-We announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin).
+We announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin) and our [Facebook page](https://www.facebook.com/redis.redsmin).
 
 ### [Installation](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from-)
 
