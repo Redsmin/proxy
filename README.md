@@ -1,4 +1,4 @@
-Redsmin proxy [![Build Status](https://secure.travis-ci.org/Redsmin/redsmin.png)](http://travis-ci.org/Redsmin/redsmin)  [![Build Status](https://drone.io/github.com/FGRibreau/redsmin/status.png)](https://drone.io/github.com/FGRibreau/redsmin/latest) [![Gittip](http://badgr.co/gittip/fgribreau.png)](https://www.gittip.com/fgribreau/)
+Redsmin proxy [![Build Status](https://secure.travis-ci.org/Redsmin/redsmin.png)](http://travis-ci.org/Redsmin/redsmin)  [![Build Status](https://drone.io/github.com/FGRibreau/redsmin/status.png)](https://drone.io/github.com/FGRibreau/redsmin/latest) [![Gittip](http://badgr.co/gittip/fgribreau.png)](https://www.gittip.com/fgribreau/) [![Deps](https://david-dm.org/Redsmin/redsmin.png)](https://david-dm.org/Redsmin/redsmin)
 ===============
 
 Redsmin proxy securely expose one [or more](https://redsmin.uservoice.com/knowledgebase/articles/169404-how-to-run-multiple-redsmin-daemons-on-the-same-se) local Redis instance to [Redsmin](https://redsmin.com).
