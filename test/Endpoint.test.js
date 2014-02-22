@@ -337,15 +337,24 @@ exports['Endpoint'] = {
   },
 
   'onError': function(t){
-    var E = this.E;
-    t.expect(4);
-    E.socket = {
-      end: function(){
-        t.ok(true, "called");
-      }
-    };
-    t.doesNotThrow(function(){E.onError();});
-    t.doesNotThrow(function(){E.onError('ok');});
-    t.done();
+    t.expect(1);
+
+    var E = this.E
+    ,   hostname = 'ssl.redsmin.dev'
+    ,   port     = 433;
+
+    E.on('connect', function(){
+      var spy = sinon.spy(E.socket, "destroy");
+      E.socket.emit('error');
+
+      E.removeAllListeners();
+      E.socket.removeAllListeners();
+
+      t.ok(spy.called, 'destroy called');
+      t.done();
+    });
+
+    E.handshaken = true;
+    E.connect(port, hostname);
   }
 };
