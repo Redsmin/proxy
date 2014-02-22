@@ -2,9 +2,8 @@ var Endpoint    = require('../lib/Endpoint')
 ,   _           = require('lodash')
 ,   fs          = require('fs')
 ,   sinon       = require('sinon')
-,   jsonPackage = JSON.parse(fs.readFileSync(__dirname + '/../package.json'));
-
-function noop(){}
+,   jsonPackage = JSON.parse(fs.readFileSync(__dirname + '/../package.json'))
+,   Socket      = require('./helpers/Socket');
 
 function tconnect(t, host, hostname, fnWriteStub){
   return function(_host, _hostname, cb){
@@ -15,19 +14,13 @@ function tconnect(t, host, hostname, fnWriteStub){
 
     process.nextTick(cb);
 
-    return _.extend({
-          write: fnWriteStub || noop
-      ,   setTimeout:noop
-      ,   setNoDelay:noop
-      ,   destroy:noop
-      ,   setKeepAlive:noop
-    }, new (require('events').EventEmitter)());
+    return new Socket(fnWriteStub);
   };
 }
 
 
 function stubLocalClient(fn){
-  return fn || noop;
+  return fn || _.noop;
 }
 
 // Quiet console output
@@ -41,9 +34,9 @@ exports['Endpoint'] = {
 
     // Mock console
     Endpoint.log = _.reduce(console, function(m, v, k){
-      m[k] = noop;
+      m[k] = _.noop;
       return m;
-    }, {debug:noop});
+    }, {debug:_.noop});
 
     done();
   },

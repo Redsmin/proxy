@@ -1,6 +1,7 @@
 var RedisClient = require('../lib/RedisClient')
 ,   _           = require('lodash')
-,   sinon       = require('sinon');
+,   sinon       = require('sinon')
+,   Socket      = require('./helpers/Socket');
 
 function tcreateConnection(t, host, hostname){
   return function(_host, _hostname, cb){
@@ -10,13 +11,7 @@ function tcreateConnection(t, host, hostname){
     }
     cb();
 
-    return _.extend({
-      write: function(){}
-    , destroy:function(){}
-    , setKeepAlive:function(){}
-    , setNoDelay:function(){}
-    , setTimeout:function(){}
-    }, new (require('events').EventEmitter)());
+    return new Socket();
   };
 }
 

@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "node ./bin/redsmin",
-    "test": "nodeunit test/*.js"
+    "test": "nodeunit test/*.test.js"
   },
   "bin": {
     "redsmin": "./bin/redsmin"
@@ -32,8 +32,8 @@
     }
   ],
   "dependencies": {
-    "lodash": "~0.3.2",
-    "winston": "~0.6.1",
+    "lodash": "~2.4.1",
+    "winston": "~0.7.2",
     "backoff": "0.0.2",
     "daemonize2": "~0.4.0-rc.5"
   },
