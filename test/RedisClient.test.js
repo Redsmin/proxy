@@ -22,8 +22,11 @@ function stubRedsminEndpoint(fn){
 // Quiet console output
 RedisClient.log = sinon.stub(_.clone(console));
 
-var R = null;
+var R        = null;
 var endpoint = null;
+var HOST     = '127.0.1.1';
+var PORT     = 6378;
+
 exports['RedisClient'] = {
   setUp: function(done) {
     // setup here
@@ -51,10 +54,7 @@ exports['RedisClient'] = {
   connect:function(t){
     t.expect(5);
 
-    var host = 6378;
-    var hostname = '127.0.0.1';
-
-    RedisClient.net.createConnection = tcreateConnection(t, host, hostname);
+    RedisClient.net.createConnection = tcreateConnection(t, PORT, HOST);
 
     R.on('connect', function(){
       t.ok(true, 'connected');
@@ -63,7 +63,14 @@ exports['RedisClient'] = {
     });
 
     t.equal(R.connected, false);
-    R.connect('redis://127.0.0.1:6378');
+    R.connect('redis://'+HOST+':'+PORT);
+  },
+
+  'updatePortAndHostname with a connection string without redis://': function(t){
+    R.updatePortAndHostname(HOST+':'+PORT);
+    t.equal(R.port, PORT);
+    t.equal(R.hostname, HOST);
+    t.done();
   },
 
   /**
