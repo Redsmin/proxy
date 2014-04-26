@@ -37,7 +37,7 @@ npm uninstall redsmin -g
 
 ### Changelog
 
-### v1.1.5 2014-04-26
+### v1.1.6 2014-04-26
  * Fixed an exception from Backoff library
 
 ### v1.1.4 2014-02-23
