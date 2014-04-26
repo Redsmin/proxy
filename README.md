@@ -37,6 +37,9 @@ npm uninstall redsmin -g
 
 ### Changelog
 
+#### v1.1.3 (26/04/2014)
+ * Fixed an exception from Backoff library
+
 #### v1.1.2 (22/02/2014)
  * Handle both connection string format, with or without redis://
  * Refactored unit-tests
