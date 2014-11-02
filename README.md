@@ -1,4 +1,4 @@
-Redsmin proxy [![Build Status](https://drone.io/github.com/Redsmin/redsmin/status.png)](https://drone.io/github.com/Redsmin/redsmin/latest) [![Deps](https://david-dm.org/Redsmin/redsmin.png)](https://david-dm.org/Redsmin/redsmin) [![Version](http://badge.fury.io/js/redsmin.png)](http://badge.fury.io/js/redsmin)
+[Redsmin](https://redsmin.com) proxy [![Build Status](https://drone.io/github.com/Redsmin/redsmin/status.png)](https://drone.io/github.com/Redsmin/redsmin/latest) [![Deps](https://david-dm.org/Redsmin/redsmin.png)](https://david-dm.org/Redsmin/redsmin) [![Version](http://badge.fury.io/js/redsmin.png)](http://badge.fury.io/js/redsmin)
 ===============
 
 ![npm](https://nodei.co/npm/redsmin.png)
@@ -76,3 +76,7 @@ npm uninstall redsmin -g
 ### v0.1.3 2012-06-29
 ### v0.1.2 2012-06-29
 ### v0.1.0 2012-06-09
+
+-----------------------
+
+[![logo](https://redsmin.com/logo/rect-large-color-white@256.png)](https://redsmin.com)
