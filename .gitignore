@@ -4,3 +4,4 @@ etc/*_dev.json
 etc/*.log
 etc/*.pid
 test_results
+.env
