@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+
+DIR=${0%/*}
+cd $DIR/..
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.21.0/install.sh | bash
+source ~/.nvm/nvm.sh
+nvm install
+nvm use
+npm install
+npm install
+set -e
+
+# Any subsequent commands which fail will cause the shell script to exit immediately
+setopt extended_glob;
+
+# Allow extended globbing (see fellow)
+multi='spec=- xunit=test/file.xml doc=test/docs.html' `npm bin`/mocha  -R mocha-multi -t 40000 **/*.test.js~node_modules/*~test/_unused_server/*
+npm install -g check-build
+check-build
