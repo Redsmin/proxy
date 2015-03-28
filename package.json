@@ -32,11 +32,11 @@
     }
   ],
   "dependencies": {
-    "backoff": "0.0.2",
+    "backoff": "^2.4.1",
     "common-env": "^1.2.0",
     "daemonize2": "~0.4.0-rc.5",
     "lodash": "^3.6.0",
-    "winston": "~0.7.2"
+    "winston": "^0.9.0"
   },
   "devDependencies": {
     "chai": "^2.2.0",
