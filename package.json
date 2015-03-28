@@ -42,7 +42,6 @@
     "chai": "^2.2.0",
     "growl": "~1.5.1",
     "grunt": "~0.4.1",
-    "grunt-bump": "0.0.11",
     "grunt-cli": "~0.1.9",
     "mocha": "^2.2.1",
     "mocha-multi": "^0.6.0",

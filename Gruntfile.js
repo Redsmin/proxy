@@ -1,5 +1,4 @@
-module.exports = function(grunt) {
-  grunt.loadNpmTasks("grunt-bump");
+module.exports = function (grunt) {
   // Project configuration
   grunt.initConfig({
     pkg: '<json:package.json>',
@@ -25,26 +24,11 @@ module.exports = function(grunt) {
       },
       globals: {
         module: true,
-        require:true,
-        exports:true,
-        console:true,
-        __dirname:true,
-        process:true
-      }
-    },
-
-    bump: {
-      options: {
-        files: ['package.json'],
-        updateConfigs: [],
-        commit: false,
-        commitMessage: 'Release v%VERSION%',
-        commitFiles: ['package.json'], // '-a' for all files
-        createTag: true,
-        tagName: 'v%VERSION%',
-        tagMessage: 'Version %VERSION%',
-        push: false,
-        pushTo: 'upstream'
+        require: true,
+        exports: true,
+        console: true,
+        __dirname: true,
+        process: true
       }
     },
 
