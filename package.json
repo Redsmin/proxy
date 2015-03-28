@@ -35,7 +35,7 @@
     "backoff": "0.0.2",
     "common-env": "^1.2.0",
     "daemonize2": "~0.4.0-rc.5",
-    "lodash": "~2.4.1",
+    "lodash": "^3.6.0",
     "winston": "~0.7.2"
   },
   "devDependencies": {
