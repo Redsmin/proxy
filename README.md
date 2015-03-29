@@ -6,7 +6,7 @@
 </p>
 
 
-Redsmin proxy securely connects one or more locally available Redis instance to [Redsmin](https://redsmin.com).
+> Redsmin proxy securely connects one or more locally available Redis instance to [Redsmin](https://redsmin.com).
 
 
 #### [Installation - Getting started](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from-)
