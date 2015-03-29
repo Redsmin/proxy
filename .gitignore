@@ -5,3 +5,4 @@ etc/*.log
 etc/*.pid
 test_results
 .env
+dump.rdb
