@@ -14,10 +14,8 @@ We announce changes on our Twitter account [@redsmin](https://twitter.com/redsmi
 #### Environment variables options:
 
 - `CONFIG_FILE`: configuration file to read (if any), default: `/path/to/redsmin-proxy/etc/redsmin.json`
-
 - `REDIS_URI`: Redis URI or socket path, default `redis://127.0.0.1:6379`
 - `REDIS_AUTH`: Redis authenticat password, default `null`
-
 - `REDSMIN_KEY`: your Redsmin server connection key, default `''`
 
 Advanced configuration:
