@@ -1,7 +1,10 @@
 [Redsmin](https://redsmin.com) proxy [![Build Status](https://drone.io/github.com/Redsmin/redsmin/status.png)](https://drone.io/github.com/Redsmin/redsmin/latest) [![Deps](https://david-dm.org/Redsmin/redsmin.png)](https://david-dm.org/Redsmin/redsmin) [![Version](http://badge.fury.io/js/redsmin.png)](http://badge.fury.io/js/redsmin) [![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/redsmin/redsmin)
 ===============
 
-![npm](https://nodei.co/npm/redsmin.png)
+<p align="center">
+<a target="_blank" href="https://play.spotify.com/track/58iP9J86ksOPwbo0pWOafk"><img style="width:100%" src="docs/redsmin-proxy.png"></a>
+</p>
+
 
 Redsmin proxy securely connects one or more locally available Redis instance to [Redsmin](https://redsmin.com).
 
