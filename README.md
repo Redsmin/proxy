@@ -5,11 +5,12 @@
 
 Redsmin proxy securely connects one or more locally available Redis instance to [Redsmin](https://redsmin.com).
 
-We announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin) and our [Facebook page](https://www.facebook.com/redis.redsmin).
 
 #### [Installation - Getting started](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from-)
 
 #### [Changelog](/CHANGELOG.md)
+
+We announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin), our [Facebook page](https://www.facebook.com/redis.redsmin) and [Redis Weekly Newsletter](http://redisweekly.com).
 
 #### Environment variables options:
 
