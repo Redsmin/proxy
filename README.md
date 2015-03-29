@@ -2,7 +2,7 @@
 ===============
 
 <p align="center">
-<a target="_blank" href="https://play.spotify.com/track/58iP9J86ksOPwbo0pWOafk"><img style="width:100%" src="docs/redsmin-proxy.png"></a>
+<a target="_blank" href="https://redsmin.com"><img style="width:100%" src="docs/redsmin-proxy.png"></a>
 </p>
 
 
