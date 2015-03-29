@@ -9,11 +9,13 @@
 var fs = require('fs');
 var net = require('net');
 var tls = require('tls');
+var path = require('path');
 
 var log = require('./lib/log')('debug');
-var config = require('./lib/config')(log);
+var Config = require('./lib/config')(log);
+var config = new Config(Config.config.config_file);
 
-var jsonPackage = JSON.parse(fs.readFileSync('./package.json'));
+var jsonPackage = JSON.parse(fs.readFileSync(path.resolve(__dirname, './package.json')));
 
 var Endpoint = require('./lib/Endpoint')(log, jsonPackage, tls, process);
 
