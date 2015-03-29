@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "node ./bin/redsmin",
-    "test": "nodeunit test/*.test.js"
+    "test": "mocha lib/**.test.js"
   },
   "bin": {
     "redsmin": "./bin/redsmin"
