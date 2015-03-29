@@ -1,33 +1,33 @@
 #!/usr/bin/env node
 
-var log  = require('../lib/log')('info'),
-  config = require('../lib/config'),
-  p      = require('path'),
-  fs     = require('fs'),
-  daemon = require("daemonize2").setup({
-    main:    p.resolve(__dirname, "../app.js"),
-    name:    "redsmin",
-    pidfile: p.resolve(__dirname, "../etc/redsmin.pid"),
-    silent: true
-  });
+var log = require('../lib/log')('info');
+var config = require('../lib/config')(log);
+var p = require('path');
+var fs = require('fs');
+var daemon = require("daemonize2").setup({
+  main: p.resolve(__dirname, "../app.js"),
+  name: "redsmin",
+  pidfile: p.resolve(__dirname, "../etc/redsmin.pid"),
+  silent: true
+});
 
 log.cli();
 
 
-daemon.on("starting", function() {
+daemon.on("starting", function () {
   log.info("Starting redsmin daemon...");
-  log.debug("Connecting on Redis at "+ config().redis);
-}).on("started", function(pid) {
+  log.debug("Connecting on Redis at " + config().redis);
+}).on("started", function (pid) {
   log.info("Redsmin daemon started. PID: " + pid);
-}).on("stopping", function() {
+}).on("stopping", function () {
   log.info("Stopping redsmin daemon...");
-}).on("stopped", function(pid) {
+}).on("stopped", function (pid) {
   log.info("Redsmin daemon stopped.");
-}).on("running", function(pid) {
+}).on("running", function (pid) {
   log.info("Redsmin daemon already running. PID: " + pid);
-}).on("notrunning", function() {
+}).on("notrunning", function () {
   log.info("Redsmin daemon is not running");
-}).on("error", function(err) {
+}).on("error", function (err) {
   log.error("Redsmin daemon failed to start:  " + err.message);
   // log.error("-- Please create a report with the following text --");
   // log.info();
@@ -36,11 +36,11 @@ daemon.on("starting", function() {
   // }
 });
 
-function usage(){
+function usage() {
   log.info("Usage: [start|stop|kill|set_key|path|restart|reload|status]");
 }
 
-if(!process.argv[2]){
+if (!process.argv[2]) {
   return usage();
 }
 
@@ -48,11 +48,11 @@ switch (process.argv[2]) {
 
 case "start":
   // This will trigger an error if there is something with the configuration
-  if(!config()){
+  if (!config()) {
     process.exit(1);
   }
 
-  daemon.start().once("started", function() {
+  daemon.start().once("started", function () {
     process.exit();
   });
   break;
@@ -62,12 +62,12 @@ case "stop":
   break;
 
 case "set_key":
-  if(!process.env.RKEY){
+  if (!process.env.RKEY) {
     return log.info('Usage: RKEY=REDSMIN_CONNECTION_KEY [RURL=redis://127.0.0.1:6379] [RAUTH=password] redsmin set_key');
   }
 
-  config.write(process.env.RKEY, process.env.RURL, process.env.RAUTH, function(err){
-    if(err){
+  config.write(process.env.RKEY, process.env.RURL, process.env.RAUTH, function (err) {
+    if (err) {
       log.error("Could not write the configuration file", err);
       return process.exit(1);
     }
@@ -78,21 +78,21 @@ case "set_key":
 
 case "path":
   console.log(p.resolve(__dirname, '../'));
-break;
+  break;
 
 case "kill":
   daemon.kill();
-break;
+  break;
 
 case "restart":
   if (daemon.status()) {
-    daemon.stop().once("stopped", function() {
-      daemon.start().once("started", function() {
+    daemon.stop().once("stopped", function () {
+      daemon.start().once("started", function () {
         process.exit();
       });
     });
   } else {
-    daemon.start().once("started", function() {
+    daemon.start().once("started", function () {
       process.exit();
     });
   }
@@ -105,5 +105,5 @@ case "status":
   break;
 
 default:
- usage();
+  usage();
 }
