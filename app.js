@@ -16,9 +16,10 @@ var config = require('./lib/config')(log);
 var jsonPackage = JSON.parse(fs.readFileSync('./package.json'));
 
 var Endpoint = require('./lib/Endpoint')(log, jsonPackage, tls, process);
+
 var RedisClient = require('./lib/RedisClient')(log, net);
 
-var Proxy = require(__dirname + '/lib/Proxy')(config, RedisClient, Endpoint);
+var RedsminProxy = require('./lib/Proxy')(config, RedisClient, Endpoint);
 
 // Start the proxy
-new Proxy().start();
+new RedsminProxy().start();
