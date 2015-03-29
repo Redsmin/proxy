@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 var log = require('../lib/log')('info');
-var config = require('../lib/config')(log);
+var Config = require('../lib/config')(log);
+var config = new Config(Config.config.config_file);
 var p = require('path');
 var fs = require('fs');
 var daemon = require("daemonize2").setup({
@@ -13,10 +14,9 @@ var daemon = require("daemonize2").setup({
 
 log.cli();
 
-
 daemon.on("starting", function () {
   log.info("Starting redsmin daemon...");
-  log.debug("Connecting on Redis at " + config().redis);
+  log.debug("Connecting on Redis at " + config.redis);
 }).on("started", function (pid) {
   log.info("Redsmin daemon started. PID: " + pid);
 }).on("stopping", function () {

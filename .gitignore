@@ -6,3 +6,4 @@ etc/*.pid
 test_results
 .env
 dump.rdb
+test/fixtures/*.json
