@@ -3,7 +3,7 @@
 
 ![npm](https://nodei.co/npm/redsmin.png)
 
-Redsmin proxy securely connects one or more(https://redsmin.uservoice.com/knowledgebase/articles/169404-how-to-run-multiple-redsmin-daemons-on-the-same-se) locally available Redis instance to [Redsmin](https://redsmin.com).
+Redsmin proxy securely connects one or more locally available Redis instance to [Redsmin](https://redsmin.com).
 
 We announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin) and our [Facebook page](https://www.facebook.com/redis.redsmin).
 
