@@ -13,7 +13,7 @@ var path = require('path');
 
 var log = require('./lib/log')('debug');
 var Config = require('./lib/config')(log);
-var config = new Config(Config.config.config_file);
+var config = new Config(Config.DEFAULT_CONFIG_PATH);
 
 var jsonPackage = JSON.parse(fs.readFileSync(path.resolve(__dirname, './package.json')));
 
