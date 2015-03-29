@@ -1,14 +1,26 @@
 # Change Log
 
-## [Unreleased](https://github.com/redsmin/redsmin/tree/HEAD)
+## [v2.0.0](https://github.com/redsmin/redsmin/tree/v2.0.0) (2015-03-29)
 
-[Full Changelog](https://github.com/redsmin/redsmin/compare/v1.1.7...HEAD)
+[Full Changelog](https://github.com/redsmin/redsmin/compare/v1.1.7...v2.0.0)
 
 **Implemented enhancements:**
 
+- Allow proxy configuration with environment variables [\#18](https://github.com/Redsmin/redsmin/issues/18)
+
+- \[breaking\] don't demonize the proxy, leave the process-management to the user [\#17](https://github.com/Redsmin/redsmin/issues/17)
+
+- Support unix socket [\#15](https://github.com/Redsmin/redsmin/issues/15)
+
 - Store info stats in redis in case of disconnection [\#10](https://github.com/Redsmin/redsmin/issues/10)
 
+- doctor command [\#4](https://github.com/Redsmin/redsmin/issues/4)
+
+- Allow multiple instance of redsmin proxy to run at the same time [\#2](https://github.com/Redsmin/redsmin/issues/2)
+
 **Closed issues:**
+
+- Large refactoring, rewrite parts of the proxy for better maintenance [\#16](https://github.com/Redsmin/redsmin/issues/16)
 
 - SSDB viewer [\#14](https://github.com/Redsmin/redsmin/issues/14)
 
