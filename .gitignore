@@ -7,3 +7,5 @@ test_results
 .env
 dump.rdb
 redsmin-proxy.pxm
+docs/redsmin-proxy-announcment.png
+docs/redsmin-proxy-announcment.pxm
