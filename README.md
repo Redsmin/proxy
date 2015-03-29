@@ -3,13 +3,28 @@
 
 ![npm](https://nodei.co/npm/redsmin.png)
 
-Redsmin proxy securely expose one [or more](https://redsmin.uservoice.com/knowledgebase/articles/169404-how-to-run-multiple-redsmin-daemons-on-the-same-se) local Redis instance to [Redsmin](https://redsmin.com).
+Redsmin proxy securely connects one or more(https://redsmin.uservoice.com/knowledgebase/articles/169404-how-to-run-multiple-redsmin-daemons-on-the-same-se) locally available Redis instance to [Redsmin](https://redsmin.com).
 
 We announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin) and our [Facebook page](https://www.facebook.com/redis.redsmin).
 
 #### [Installation - Getting started](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from-)
 
 #### [Changelog](/CHANGELOG.md)
+
+#### Environment variables options:
+
+- `CONFIG_FILE`: configuration file to read (if any), default: `/path/to/redsmin-proxy/etc/redsmin.json`
+
+- `REDIS_URI`: Redis URI or socket path, default `redis://127.0.0.1:6379`
+- `REDIS_AUTH`: Redis authenticat password, default `null`
+
+- `REDSMIN_KEY`: your Redsmin server connection key, default `''`
+
+Advanced configuration:
+
+- `REDSMIN_PORT`: where redsmin proxy should connect, default: `993`
+- `REDSMIN_HOSTNAME`: where redsmin proxy should connect, default `ssl.redsmin.com`
+- `DEBUG`: debug mode, default `false`
 
 #### How to start Redsmin proxy
 
@@ -122,6 +137,26 @@ START /B redsmin
 
 
 Note: of course we could have used multiple `CONFIG_FILE` instead of environment variables.
+
+#### How to keep redsmin proxy up once I disconnect
+
+On MacOS, Ubuntu/Debian, the simplest way is to use [screen](http://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/):
+
+```
+# start screen
+screen
+# start redsmin-proxy
+REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token1" redsmin 
+# Ctrl+A+D to detach from screen
+# and then to reattach to the screen session:
+screen -r 
+```
+
+But you could also use [Upstart](http://upstart.ubuntu.com/), [systemd](http://www.freedesktop.org/wiki/Software/systemd/), [supervisord](http://supervisord.org/) or [pm2](https://github.com/Unitech/PM2) on these system.
+
+On Windows you will need to [create a service](http://support.microsoft.com/en-us/kb/251192) or use [pm2](https://github.com/Unitech/PM2).
+
+**We will happily merge into this repository any pull-request describing a configuration file for one of the above process runner (or any other one).**
 
 #### I'm behind a firewall, what rule should I add ?
 
