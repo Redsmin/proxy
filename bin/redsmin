@@ -48,10 +48,6 @@ switch (process.argv[2]) {
 
 case "start":
   // This will trigger an error if there is something with the configuration
-  if (!config()) {
-    process.exit(1);
-  }
-
   daemon.start().once("started", function () {
     process.exit();
   });
