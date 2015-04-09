@@ -13,7 +13,7 @@
   "contributors": [],
   "homepage": "https://redsmin.com",
   "preferGlobal": true,
-  "main": "index",
+  "main": "app",
   "bugs": {
     "url": "https://github.com/Redsmin/redsmin/issues",
     "email": "bugs@redsmin.com"
