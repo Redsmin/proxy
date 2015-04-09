@@ -1,5 +1,13 @@
 # Change Log
 
+## [v2.0.2](https://github.com/redsmin/redsmin/tree/v2.0.2) (2015-04-09)
+
+[Full Changelog](https://github.com/redsmin/redsmin/compare/v2.0.1...v2.0.2)
+
+## [v2.0.1](https://github.com/redsmin/redsmin/tree/v2.0.1) (2015-03-29)
+
+[Full Changelog](https://github.com/redsmin/redsmin/compare/v2.0.0...v2.0.1)
+
 ## [v2.0.0](https://github.com/redsmin/redsmin/tree/v2.0.0) (2015-03-29)
 
 [Full Changelog](https://github.com/redsmin/redsmin/compare/v1.1.7...v2.0.0)
