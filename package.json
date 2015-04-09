@@ -36,7 +36,7 @@
     "common-env": "^1.2.0",
     "daemonize2": "~0.4.0-rc.5",
     "lodash": "^3.6.0",
-    "winston": "^0.9.0"
+    "winston": "1.*.*"
   },
   "devDependencies": {
     "chai": "^2.2.0",
