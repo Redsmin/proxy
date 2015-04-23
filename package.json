@@ -33,7 +33,7 @@
   ],
   "dependencies": {
     "backoff": "^2.4.1",
-    "common-env": "^1.2.0",
+    "common-env": "2.*.*",
     "daemonize2": "~0.4.0-rc.5",
     "lodash": "^3.6.0",
     "winston": "1.*.*"
