@@ -13,4 +13,4 @@ deployment:
     commands:
       - export GIT_TAG=`git tag --contains $CIRCLE_SHA1`
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push redsmin/proxy:$CIRCLE_SHA1
+      - docker push redsmin/proxy:$GIT_TAG
