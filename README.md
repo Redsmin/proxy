@@ -31,7 +31,17 @@ Advanced configuration:
 
 #### How to start Redsmin proxy
 
-###### Docker
+##### Docker
+
+###### Start and connect Redsmin proxy to an network-wide available Redis
+
+```bash
+docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=5069597bb849097c1000000f -e REDIS_URI="redis://192.168.3.50:6379" redsmin/proxy
+```
+
+Where `redis://192.168.3.50:6379` will be the ip address and port of the running Redis server.
+
+###### Start and connect Redsmin proxy to an Redis container
 
 Let first say you've started a Redis container:
 
@@ -39,21 +49,27 @@ Let first say you've started a Redis container:
 docker run --name my-redis --rm redis
 ```
 
-You can now start the redsmin-proxy container with:
+You can [link](https://docs.docker.com/userguide/dockerlinks/) redsmin proxy container to the redis one with `--link:
 
 ```bash
 docker run -it --rm --name redsmin-proxy --link my-redis:local-redis -e REDSMIN_KEY=YOUR_KEY -e REDIS_URI="redis://local-redis:6379" redsmin/proxy
 ```
 
+###### Docker auto-restart
+
 If you want to leverage docker [auto-restart docker feature](https://docs.docker.com/reference/run/#restart-policies-restart), use the `--restart=always` command.
 
-###### MacOS, Debian/Ubuntu 
+======================================================================
+
+##### MacOS, Debian/Ubuntu 
 
 ```bash
 REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token" redsmin
 ```
 
-###### Windows
+======================================================================
+
+##### Windows
 
 ```bash
 set REDIS_URI="redis://127.0.0.1:6379" 
