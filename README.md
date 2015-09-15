@@ -31,7 +31,7 @@ Advanced configuration:
 
 #### How to start Redsmin proxy
 
-- Docker:
+###### Docker
 
 Let first say you've started a Redis container:
 
@@ -42,16 +42,16 @@ docker run --name my-redis --rm redis
 You can now start the redsmin-proxy container with:
 
 ```bash
-docker run -it --rm --name redsmin --link my-redis:local-redis -e REDSMIN_KEY=YOUR_KEY -e REDIS_URI="redis://local-redis:6379" redsmin-proxy
+docker run -it --rm --name redsmin-proxy --link my-redis:local-redis -e REDSMIN_KEY=YOUR_KEY -e REDIS_URI="redis://local-redis:6379" redsmin/proxy
 ```
 
-- MacOS, Debian/Ubuntu: 
+###### MacOS, Debian/Ubuntu 
 
 ```bash
 REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token" redsmin
 ```
 
-- Windows:
+###### Windows
 
 ```bash
 set REDIS_URI="redis://127.0.0.1:6379" 
@@ -59,7 +59,6 @@ set REDSMIN_KEY="redsmin-token"
 redsmin
 
 ```
-
 
 #### How to start Redsmin proxy with a password protected redis
 
