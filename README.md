@@ -28,6 +28,7 @@ Advanced configuration:
 - `REDSMIN_HOSTNAME`: where redsmin proxy should connect, default `ssl.redsmin.com`
 - `DEBUG`: debug mode, default `false`
 
+--------------------------------------------------------------------------------------------------
 
 #### How to start Redsmin proxy
 
@@ -59,15 +60,12 @@ docker run -it --rm --name redsmin-proxy --link my-redis:local-redis -e REDSMIN_
 
 If you want to leverage docker [auto-restart docker feature](https://docs.docker.com/reference/run/#restart-policies-restart), use the `--restart=always` command.
 
-======================================================================
 
 ##### MacOS, Debian/Ubuntu 
 
 ```bash
 REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token" redsmin
 ```
-
-======================================================================
 
 ##### Windows
 
@@ -78,15 +76,17 @@ redsmin
 
 ```
 
+--------------------------------------------------------------------------------------------------
+
 #### How to start Redsmin proxy with a password protected redis
 
-- MacOS, Debian/Ubuntu: 
+##### MacOS, Debian/Ubuntu 
 
 ```bash
 REDIS_URI="redis://127.0.0.1:6379" REDIS_AUTH="auth-pass" REDSMIN_KEY="redsmin-token" redsmin
 ```
 
-- Windows:
+##### Windows
 
 ```bash
 set REDIS_URI="redis://127.0.0.1:6379" 
@@ -95,15 +95,17 @@ set REDSMIN_KEY="redsmin-token"
 redsmin
 ```
 
+--------------------------------------------------------------------------------------------------
+
 #### How to start Redsmin proxy with a redis listening on a unix-socket
 
-- MacOS, Debian/Ubuntu: 
+##### MacOS, Debian/Ubuntu 
 
 ```bash
 REDIS_URI="/tmp/redis.sock" REDSMIN_KEY="5517e20046f4c7530d000357" redsmin
 ```
 
-- Windows:
+##### Windows
 
 ```bash
 set REDIS_URI="/tmp/redis.sock" 
@@ -112,6 +114,8 @@ redsmin
 ```
 
 Note: you may need to use `sudo` to access to the socket.
+
+--------------------------------------------------------------------------------------------------
 
 #### How to start Redsmin proxy reading a configuration file
 
@@ -127,22 +131,24 @@ First create a json configuration file, for instance  `/etc/redsmin.json`:
 
 Then start redsmin proxy with: 
 
-- MacOS, Debian/Ubuntu: 
+##### MacOS, Debian/Ubuntu 
 
 ```bash
 CONFIG_FILE="/etc/redsmin.json" redsmin
 ```
 
-- Windows:
+##### Windows
 
 ```bash
 set CONFIG_FILE="/etc/redsmin.json"
 redsmin
 ```
 
+--------------------------------------------------------------------------------------------------
+
 #### How to run multiple Redsmin proxy daemons on the same server
 
-- MacOS, Debian/Ubuntu: 
+##### MacOS, Debian/Ubuntu 
 
 ```bash
 REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token1" redsmin &
@@ -151,7 +157,7 @@ REDIS_URI="redis://127.0.0.1:6381" REDSMIN_KEY="redsmin-token3" redsmin &
 REDIS_URI="redis://127.0.0.1:6382" REDSMIN_KEY="redsmin-token4" redsmin &
 ```
 
-- Windows:
+##### Windows
 
 ```bash
 set REDIS_URI="redis://127.0.0.1:6379" 
@@ -174,6 +180,8 @@ START /B redsmin
 
 Note: of course we could have used multiple `CONFIG_FILE` instead of environment variables.
 
+--------------------------------------------------------------------------------------------------
+
 #### How to keep redsmin proxy up once I disconnect
 
 On MacOS, Ubuntu/Debian, the simplest way is to use [screen](http://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/):
@@ -194,15 +202,18 @@ On Windows you will need to [create a service](http://support.microsoft.com/en-u
 
 **We will happily merge into this repository any pull-request describing a configuration file for one of the above process runner (or any other one).**
 
+--------------------------------------------------------------------------------------------------
+
 #### I'm behind a firewall, what rule should I add ?
 
 Redsmin proxy connects to `ssl.redsmin.com` on port `993` with a secure [TLS socket connection](https://en.wikipedia.org/wiki/Transport_Layer_Security). For troubleshooting: [What ip/port should I locally open to use Redsmin proxy](https://redsmin.uservoice.com/knowledgebase/articles/274294-what-ip-port-should-i-locally-open-to-use-redsmin-).
 
+--------------------------------------------------------------------------------------------------
 
-#### Uninstall
+#### Uninstalling Redsmin Proxy
+
+##### MacOS, Debian/Ubuntu 
 
 ```bash
 npm uninstall redsmin -g
 ```
-
-
