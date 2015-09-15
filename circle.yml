@@ -5,7 +5,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t redsmin/proxy .
+    - docker build -t redsmin/proxy:$CIRCLE_SHA1 .
 
 deployment:
   hub:
