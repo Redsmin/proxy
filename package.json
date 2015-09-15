@@ -1,7 +1,7 @@
 {
   "name": "redsmin",
   "description": "Redsmin proxy daemon for Redsmin fully-featured Redis GUI",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "keywords": [
     "redis",
     "redis-gui",
