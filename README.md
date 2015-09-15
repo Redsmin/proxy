@@ -37,10 +37,10 @@ Advanced configuration:
 ###### Start and connect Redsmin proxy to an network-wide available Redis
 
 ```bash
-docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=5069597bb849097c1000000f -e REDIS_URI="redis://192.168.3.50:6379" redsmin/proxy
+docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=YOUR_REDSMIN_KEY -e REDIS_URI="redis://192.168.3.50:6379" redsmin/proxy
 ```
 
-Where `redis://192.168.3.50:6379` will be the ip address and port of the running Redis server.
+Where `redis://192.168.3.50:6379` will be the ip address and port of the running Redis server and `YOUR_REDSMIN_KEY` is your [Redsmin key](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from).
 
 ###### Start and connect Redsmin proxy to an Redis container
 
