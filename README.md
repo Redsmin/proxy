@@ -45,6 +45,8 @@ You can now start the redsmin-proxy container with:
 docker run -it --rm --name redsmin-proxy --link my-redis:local-redis -e REDSMIN_KEY=YOUR_KEY -e REDIS_URI="redis://local-redis:6379" redsmin/proxy
 ```
 
+If you want to leverage docker [auto-restart docker feature](https://docs.docker.com/reference/run/#restart-policies-restart), use the `--restart=always` command.
+
 ###### MacOS, Debian/Ubuntu 
 
 ```bash
