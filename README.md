@@ -184,6 +184,21 @@ Note: of course we could have used multiple `CONFIG_FILE` instead of environment
 
 #### How to keep redsmin proxy up once I disconnect
 
+## With nohup
+
+The easiest way is to use [nohup](http://linux.die.net/man/1/nohup) that will keep redsmin-proxy running even once the SSH session is closed. Simply connect to the server that contains Redis, run the commands below, don't forget to replace `YOUR_REDSMIN_TOKEN` with the `REDSMIN_TOKEN` you had when creating the proxy connection from Redsmin app.
+
+```shell
+echo '#!/usr/bin/env bash' >> redsmin-proxy.sh
+echo 'while true; do REDSMIN_KEY=YOUR_REDSMIN_TOKEN redsmin; sleep 1; done;' >> redsmin-proxy.sh
+chmod +x redsmin-proxy.sh
+nohup ./redsmin-proxy.sh &
+```
+
+To check that everything is alright or to debug Redsmin proxy, you can use `tail -f nohup.out`.
+
+## With screen
+
 On MacOS, Ubuntu/Debian, the simplest way is to use [screen](http://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/):
 
 ```
@@ -195,6 +210,8 @@ REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token1" redsmin
 # and then to reattach to the screen session:
 screen -r 
 ```
+
+## With a process manager
 
 But you could also use [Upstart](http://upstart.ubuntu.com/), [systemd](http://www.freedesktop.org/wiki/Software/systemd/), [supervisord](http://supervisord.org/) or [pm2](https://github.com/Unitech/PM2) on these system.
 
