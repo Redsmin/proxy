@@ -21,6 +21,7 @@
   "scripts": {
     "start": "node ./bin/redsmin",
     "test": "multi='spec=- xunit=test/file.xml doc=test/docs.html' mocha -t 5000 -R mocha-multi lib/**.test.js",
+    "check-build": "check-build"
   },
   "bin": {
     "redsmin": "./bin/redsmin"
@@ -40,6 +41,7 @@
   },
   "devDependencies": {
     "chai": "^2.2.0",
+    "check-build": "^2.6.0",
     "growl": "~1.5.1",
     "grunt": "~0.4.1",
     "grunt-cli": "~0.1.9",
