@@ -1,6 +1,9 @@
 ## Change Log
 
-### upcoming (2015/11/22 22:57 +00:00)
+### v2.2.4 (2015/11/22 23:01 +00:00)
+- [d3ba800](https://github.com/Redsmin/proxy/commit/d3ba8007a0140285c02f59a18e58ed2247a585d3) Release v2.2.4. (@FGRibreau)
+- [9a6cae6](https://github.com/Redsmin/proxy/commit/9a6cae6a587d468ed0df25ec5a4a91ef9cfef95c) feat(changelog): new changelog (@FGRibreau)
+- [3d17b02](https://github.com/Redsmin/proxy/commit/3d17b020fd054678ab624473d69e82a111dacd91) fix(package): fixed github urls (@FGRibreau)
 - [ae46c54](https://github.com/Redsmin/proxy/commit/ae46c54281aa44c3462a33891e216ced455e6242) Merge branch 'master' of github.com:Redsmin/proxy (@FGRibreau)
 - [50110a7](https://github.com/Redsmin/proxy/commit/50110a7834290206a12fd5c95e27e3a507e252f9) fix(gitignore) (@FGRibreau)
 - [ae3529e](https://github.com/Redsmin/proxy/commit/ae3529e7b052ca9068cb88559a158ec2cbd39211) feat(package): added check-build (@FGRibreau)
