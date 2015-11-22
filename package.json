@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "node ./bin/redsmin",
-    "test": "mocha lib/**.test.js"
+    "test": "multi='spec=- xunit=test/file.xml doc=test/docs.html' mocha -t 5000 -R mocha-multi lib/**.test.js",
   },
   "bin": {
     "redsmin": "./bin/redsmin"
