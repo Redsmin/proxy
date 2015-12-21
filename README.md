@@ -197,6 +197,12 @@ nohup ./redsmin-proxy.sh &
 
 To check that everything is alright or to debug Redsmin proxy, you can use `tail -f nohup.out`.
 
+## With nohup (one-liner)
+
+```
+nohup bash -c "while true; do REDSMIN_KEY=YOUR_REDSMIN_TOKEN redsmin; sleep 1; done" &
+```
+
 ## With screen
 
 On MacOS, Ubuntu/Debian, the simplest way is to use [screen](http://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/):
