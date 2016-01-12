@@ -3,11 +3,12 @@ machine:
     - docker
   # Build image, this must not be changed
   environment:
-    image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME:$CIRCLE_BRANCH
+    image: redsmin/proxy:$CIRCLE_BRANCH
 
 dependencies:
   cache_directories:
     - "~/docker"
+
   # Build docker image
   override:
     - npm install
@@ -19,7 +20,11 @@ dependencies:
 
 # We deploy every branch to the docker hub
 deployment:
-  production:
-    branch: /.*/
+  latest:
+    tag: /v[0-9]+(\.[0-9]+)*/
     commands:
       - docker push $image
+  latest:
+    branch: master
+    commands:
+      - docker push redsmin/proxy:latest
