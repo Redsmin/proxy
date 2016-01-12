@@ -1,16 +1,25 @@
 machine:
   services:
     - docker
+  # Build image, this must not be changed
+  environment:
+    image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME:$CIRCLE_BRANCH
 
 dependencies:
+  cache_directories:
+    - "~/docker"
+  # Build docker image
   override:
-    - docker info
-    - docker build -t redsmin/proxy:$CIRCLE_SHA1 .
     - npm install
+    - npm test
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+    - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
+    - docker build -t $image .
+    - mkdir -p ~/docker; docker save $image > ~/docker/image.tar
 
+# We deploy every branch to the docker hub
 deployment:
-  hub:
-    tag: /v[0-9]+(\.[0-9]+)*/
+  production:
+    branch: /.*/
     commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push redsmin/proxy:latest
+      - docker push $image
