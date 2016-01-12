@@ -21,9 +21,8 @@ dependencies:
 # We deploy every branch to the docker hub
 deployment:
   latest:
-    tag: /v[0-9]+(\.[0-9]+)*/
+    branch: /.*/
     commands:
-      - echo $image
       - docker push $image
   latest:
     branch: master
