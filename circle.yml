@@ -27,4 +27,5 @@ deployment:
   latest:
     branch: master
     commands:
-      - docker push redsmin/proxy:latest
+      - docker build -t latest
+      - docker push redsmin/proxy
