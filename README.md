@@ -1,6 +1,6 @@
 ## [Redsmin](https://redsmin.com) proxy 
 
-[![Circle CI](https://img.shields.io/circleci/project/Redsmin/proxy/master.svg)](https://circleci.com/gh/Redsmin/proxy) ![Dl](https://img.shields.io/npm/dt/redsmin.svg) ![Version](https://img.shields.io/npm/v/redsmin.svg)
+[![Circle CI](https://img.shields.io/circleci/project/Redsmin/proxy/master.svg)](https://circleci.com/gh/Redsmin/proxy) ![Dl](https://img.shields.io/npm/dt/redsmin.svg) ![Version](https://img.shields.io/npm/v/redsmin.svg) [![Docker Hub](http://img.shields.io/badge/docker-hub-22b8eb.svg?style=flat)](https://hub.docker.com/r/redsmin/proxy/)
 [![Support](http://img.shields.io/badge/redsmin-support-0690fa.svg?style=flat)](https://redsmin.uservoice.com/) [![Follow](https://img.shields.io/twitter/follow/redsmin.svg?style=social)](https://twitter.com/Redsmin)
 
 <p align="center">
