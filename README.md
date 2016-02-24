@@ -44,7 +44,7 @@ docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=YOUR_REDSMIN_KEY -e REDI
 
 Where `redis://192.168.3.50:6379` will be the ip address and port of the running Redis server and `YOUR_REDSMIN_KEY` is your [Redsmin key](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from).
 
-###### Start and connect Redsmin proxy to an Redis container
+###### Start and connect Redsmin proxy to a Redis container
 
 Let first say you've started a Redis container:
 
