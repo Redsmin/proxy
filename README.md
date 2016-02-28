@@ -58,7 +58,8 @@ Advanced configuration:
 
 --------------------------------------------------------------------------------------------------
 
-#### Is the communication safe between my server and Redsmin? (Yes) <a name="CommunicationSafety"></a>
+<a name="CommunicationSafety"></a>
+#### Is the communication safe between my server and Redsmin? (Yes)
 
 Yes, Redsmin and Redsmin proxy communicate through a secure connection using the [TLS 1.2 protocol](https://en.wikipedia.org/wiki/Transport_Layer_Security) so no one will be able to inspect the data looking at the traffic.
 
