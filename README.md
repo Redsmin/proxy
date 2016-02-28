@@ -9,15 +9,38 @@
 
 
 
-
-
-#### [Installation - Getting started](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from-)
-
-#### [Changelog](/CHANGELOG.md)
+- [Installation - Getting started](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from-)
+- [Changelog](/CHANGELOG.md)
+- [Environment variables options](#EnvironmentVariablesOptions)
+- [Is the communication safe between my server and Redsmin? (Yes)](#CommunicationSafety)
+- How to start Redsmin proxy
+  - [on Docker](#StartWithDocker)
+    -  [Start and connect Redsmin proxy to an network-wide available Redis](#StartWithDockerAndConnectToNetworkWideRedis)
+    -  [Start and connect Redsmin proxy to a Redis container](#StartWithDockerAndConnectToARedisContainer)
+    -  [Docker auto-restart](#StartWithDockerAndUseAutoRestart)
+  - [on Mac OS X](#StartOnMacOSDebianUbuntu)
+  - [on Debian/Ubuntu, *nix](#StartOnMacOSDebianUbuntu)
+  - [on Windows](#StartOnWindows)
+  - with a password protected redis
+    - [Mac OS X](#StartWithPasswordProtectedRedisUnix)
+    - [Debian/Ubuntu, *nix](#StartWithPasswordProtectedRedisUnix)
+    - [Windows](#StartWithPasswordProtectedRedisWindows)
+  - with a redis listening on a unix-socket
+    - [Mac OS X](#StartWithRedisUnixSocketUnix)
+    - [Debian/Ubuntu, *nix](#StartWithRedisUnixSocketUnix)
+    - [Windows](#StartWithRedisUnixSocketWindows)
+  - [reading a configuration file](#startWithConfigurationFile)
+- [How to connect multiple Redis from the same server to Redsmin](#connectMultipleRedis)
+- How to keep redsmin proxy up once I disconnect
+  - [with nohup](#keepRedsminProxyUpWithNohup)
+  - [with screen](#keepRedsminProxyUpWithScreen)
+  - [with a process manager](#keepRedsminProxyUpWithAProcessManager)
+- [I'm behind a firewall, what rule should I add?](#RuleBehindTheFirewall)
+- [How to uninstall Redsmin Proxy](#Uninstall)
 
 We announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin), our [Facebook page](https://www.facebook.com/redis.redsmin) and [Redis Weekly Newsletter](http://redisweekly.com).
 
-#### Environment variables options:
+####  Environment variables options: <a name="EnvironmentVariablesOptions"></a> ####
 
 - `CONFIG_FILE`: configuration file to read (if any), default: `/path/to/redsmin-proxy/etc/redsmin.json`
 - `REDIS_URI`: Redis URI or socket path, default `redis://127.0.0.1:6379`
@@ -32,11 +55,18 @@ Advanced configuration:
 
 --------------------------------------------------------------------------------------------------
 
+#### Is the communication safe between my server and Redsmin? (Yes) <a name="CommunicationSafety"></a>
+
+Yes, Redsmin and Redsmin proxy communicate through a secure connection using the [TLS 1.2 protocol](https://en.wikipedia.org/wiki/Transport_Layer_Security) so no one will be able to inspect the data looking at the traffic.
+
+--------------------------------------------------------------------------------------------------
+
+
 #### How to start Redsmin proxy
 
-##### Docker
+##### Docker <a name="StartWithDocker"></a>
 
-###### Start and connect Redsmin proxy to an network-wide available Redis
+###### Start and connect Redsmin proxy to an network-wide available Redis <a name="StartWithDockerAndConnectToNetworkWideRedis"></a>
 
 ```bash
 docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=YOUR_REDSMIN_KEY -e REDIS_URI="redis://192.168.3.50:6379" redsmin/proxy
@@ -44,7 +74,7 @@ docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=YOUR_REDSMIN_KEY -e REDI
 
 Where `redis://192.168.3.50:6379` will be the ip address and port of the running Redis server and `YOUR_REDSMIN_KEY` is your [Redsmin key](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from).
 
-###### Start and connect Redsmin proxy to a Redis container
+###### Start and connect Redsmin proxy to a Redis container <a name="StartWithDockerAndConnectToARedisContainer"></a>
 
 Let first say you've started a Redis container:
 
@@ -58,18 +88,18 @@ You can [link](https://docs.docker.com/userguide/dockerlinks/) redsmin proxy con
 docker run -it --rm --name redsmin-proxy --link my-redis:local-redis -e REDSMIN_KEY=YOUR_KEY -e REDIS_URI="redis://local-redis:6379" redsmin/proxy
 ```
 
-###### Docker auto-restart
+###### Docker auto-restart <a name="StartWithDockerAndUseAutoRestart"></a>
 
 If you want to leverage docker [auto-restart docker feature](https://docs.docker.com/reference/run/#restart-policies-restart), use the `--restart=always` command.
 
 
-##### MacOS, Debian/Ubuntu 
+##### MacOS, Debian/Ubuntu <a name="StartOnMacOSDebianUbuntu"></a>
 
 ```bash
 REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token" redsmin
 ```
 
-##### Windows
+##### Windows  <a name="StartOnWindows"></a>
 
 ```bash
 set REDIS_URI="redis://127.0.0.1:6379" 
@@ -80,15 +110,15 @@ redsmin
 
 --------------------------------------------------------------------------------------------------
 
-#### How to start Redsmin proxy with a password protected redis
+#### How to start Redsmin proxy with a password protected redis  <a name="StartWithPasswordProtectedRedis"></a>
 
-##### MacOS, Debian/Ubuntu 
+##### MacOS, Debian/Ubuntu  <a name="StartWithPasswordProtectedRedisUnix"></a>
 
 ```bash
 REDIS_URI="redis://127.0.0.1:6379" REDIS_AUTH="auth-pass" REDSMIN_KEY="redsmin-token" redsmin
 ```
 
-##### Windows
+##### Windows <a name="StartWithPasswordProtectedRedisWindows"></a>
 
 ```bash
 set REDIS_URI="redis://127.0.0.1:6379" 
@@ -99,15 +129,15 @@ redsmin
 
 --------------------------------------------------------------------------------------------------
 
-#### How to start Redsmin proxy with a redis listening on a unix-socket
+#### How to start Redsmin proxy with a redis listening on a unix-socket <a name="StartWithRedisUnixSocket"></a>
 
-##### MacOS, Debian/Ubuntu 
+##### MacOS, Debian/Ubuntu <a name="StartWithRedisUnixSocketUnix"></a>
 
 ```bash
 REDIS_URI="/tmp/redis.sock" REDSMIN_KEY="5517e20046f4c7530d000357" redsmin
 ```
 
-##### Windows
+##### Windows <a name="StartWithRedisUnixSocketWindows"></a>
 
 ```bash
 set REDIS_URI="/tmp/redis.sock" 
@@ -119,7 +149,7 @@ Note: you may need to use `sudo` to access to the socket.
 
 --------------------------------------------------------------------------------------------------
 
-#### How to start Redsmin proxy reading a configuration file
+#### How to start Redsmin proxy reading a configuration file <a name="startWithConfigurationFile"></a>
 
 First create a json configuration file, for instance  `/etc/redsmin.json`:
 
@@ -148,7 +178,7 @@ redsmin
 
 --------------------------------------------------------------------------------------------------
 
-#### How to run multiple Redsmin proxy daemons on the same server
+#### How to connect multiple Redis from the same server to Redsmin <a name="connectMultipleRedis">
 
 ##### MacOS, Debian/Ubuntu 
 
@@ -186,7 +216,7 @@ Note: of course we could have used multiple `CONFIG_FILE` instead of environment
 
 #### How to keep redsmin proxy up once I disconnect
 
-## With nohup
+## With nohup <a name="keepRedsminProxyUpWithNohup"></a>
 
 The easiest way is to use [nohup](http://linux.die.net/man/1/nohup) that will keep redsmin-proxy running even once the SSH session is closed. Simply connect to the server that contains Redis, run the commands below, don't forget to replace `YOUR_REDSMIN_TOKEN` with the `REDSMIN_TOKEN` you had when creating the proxy connection from Redsmin app.
 
@@ -205,7 +235,7 @@ To check that everything is alright or to debug Redsmin proxy, you can use `tail
 nohup bash -c "while true; do REDSMIN_KEY=YOUR_REDSMIN_TOKEN redsmin; sleep 1; done" &
 ```
 
-## With screen
+## With screen <a name="keepRedsminProxyUpWithScreen"></a>
 
 On MacOS, Ubuntu/Debian, the simplest way is to use [screen](http://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/):
 
@@ -219,7 +249,7 @@ REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token1" redsmin
 screen -r 
 ```
 
-## With a process manager
+## With a process manager <a name="keepRedsminProxyUpWithAProcessManager"></a>
 
 But you could also use [Upstart](http://upstart.ubuntu.com/), [systemd](http://www.freedesktop.org/wiki/Software/systemd/), [supervisord](http://supervisord.org/) or [pm2](https://github.com/Unitech/PM2) on these system.
 
@@ -229,13 +259,13 @@ On Windows you will need to [create a service](http://support.microsoft.com/en-u
 
 --------------------------------------------------------------------------------------------------
 
-#### I'm behind a firewall, what rule should I add ?
+#### I'm behind a firewall, what rule should I add?  <a name="RuleBehindTheFirewall"></a>
 
 Redsmin proxy connects to `ssl.redsmin.com` on port `993` with a secure [TLS socket connection](https://en.wikipedia.org/wiki/Transport_Layer_Security). For troubleshooting: [What ip/port should I locally open to use Redsmin proxy](https://redsmin.uservoice.com/knowledgebase/articles/274294-what-ip-port-should-i-locally-open-to-use-redsmin-).
 
 --------------------------------------------------------------------------------------------------
 
-#### Uninstalling Redsmin Proxy
+#### How to uninstall Redsmin Proxy <a name="Uninstall"></a>
 
 ##### MacOS, Debian/Ubuntu 
 
