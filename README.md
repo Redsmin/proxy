@@ -15,6 +15,7 @@
 - [Is the communication safe between my server and Redsmin? (Yes)](#CommunicationSafety)
 - How to start Redsmin proxy
   - [on Docker](#StartWithDocker)
+    -  [Start and connect Redsmin proxy to a local Redis server](#StartWithDockerAndConnectToALocalRedis)
     -  [Start and connect Redsmin proxy to an network-wide available Redis](#StartWithDockerAndConnectToNetworkWideRedis)
     -  [Start and connect Redsmin proxy to a Redis container](#StartWithDockerAndConnectToARedisContainer)
     -  [Docker auto-restart](#StartWithDockerAndUseAutoRestart)
@@ -70,6 +71,24 @@ Yes, Redsmin and Redsmin proxy communicate through a secure connection using the
 
 <a name="StartWithDocker"></a>
 ##### Docker 
+
+
+<a name="StartWithDockerAndConnectToALocalRedis"></a>
+###### Start and connect Redsmin proxy to a local Redis server
+
+Let say you started `redis-server` on your machine and then want to start redsmin-proxy from docker. **If you are on MacOSX or Windows the following command won't work** (if you are on Linux the following line will work):
+
+```bash
+docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=YOUR_REDSMIN_KEY -e REDIS_URI="redis://127.0.0.1:6379" redsmin/proxy
+```
+
+It does not work because on non-linux environment the docker daemon is running inside a VM and your `redis-server` is running on your host machine, thus accessing 127.0.0.1 from the docker daemon will simply hit the VM loopback.
+
+So we simply need to specify the `HOST_IP` (replace it with your own local IP, you may want to use `ifconfig` to find it) instead of `127.0.0.1`:
+
+```bash
+docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=YOUR_REDSMIN_KEY -e REDIS_URI="redis://HOST_IP:6379" redsmin/proxy
+```
 
 <a name="StartWithDockerAndConnectToNetworkWideRedis"></a>
 ###### Start and connect Redsmin proxy to an network-wide available Redis 
