@@ -38,6 +38,8 @@
   - [with a process manager](#keepRedsminProxyUpWithAProcessManager)
 - [I'm behind a firewall, what rule should I add?](#RuleBehindTheFirewall)
 - [How to uninstall Redsmin Proxy](#Uninstall)
+- [Throubleshooting](#troubleshooting)
+  - [Ready check failed: NOAUTH Authentication required.](#noauth)
 
 We announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin), our [Facebook page](https://www.facebook.com/redis.redsmin) and [Redis Weekly Newsletter](http://redisweekly.com).
 
@@ -314,3 +316,11 @@ Redsmin proxy connects to `ssl.redsmin.com` on port `993` with a secure [TLS soc
 ```bash
 npm uninstall redsmin -g
 ```
+
+<a name="troubleshooting"></a>
+#### Throubleshooting
+
+<a name="noauth"></a>
+##### Ready check failed: NOAUTH Authentication required
+
+It means that your Redis server required a password and that no password is configured in Redsmin Proxy. To fix this start Redsmin proxy with the [`REDIS_AUTH`](#environment-variables-options) environment variable.
