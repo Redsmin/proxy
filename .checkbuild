@@ -8,7 +8,7 @@
     "allowFailures": false
   },
   "jshint": {
-    "args": ["**/*.js", "!node_modules/**", "!**/*.test*.js"]
+    "args": ["**/*.js", "!node_modules/**", "!**/*.test*.js", "!test/coverage/**"]
   },
   "jsinspect": {
     "args": ["**/*.js", "!*node_modules/**", "!**/*.test*.js"],
