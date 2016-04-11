@@ -14,6 +14,6 @@ set -e
 setopt extended_glob;
 
 # Allow extended globbing (see fellow)
-multi='spec=- xunit=test/file.xml doc=test/docs.html' `npm bin`/mocha  -R mocha-multi -t 40000 **/*.test.js~node_modules/*~test/_unused_server/*
+npm run test
 npm install -g check-build
 check-build

@@ -13,3 +13,5 @@ test/docs.html
 test/file.xml
 private/
 test/coverage
+test_results
+.nyc_output
