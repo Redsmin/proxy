@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "node ./bin/redsmin",
-    "test": "multi='spec=- xunit=test/file.xml doc=test/docs.html' nyc --all --statements=77 --lines=77 --functions=70 --branches=57 --check-coverage --reporter=lcov --reporter=cobertura --report-dir=test/coverage -- mocha -t 5000 -R mocha-multi lib/**.test.js",
+    "test": "multi='spec=- xunit=test/file.xml doc=test/docs.html' nyc --all --statements=76 --lines=76 --functions=70 --branches=57 --check-coverage --reporter=lcov --reporter=cobertura --report-dir=test/coverage -- mocha -t 5000 -R mocha-multi lib/**.test.js",
     "test-watch": "multi='spec=- xunit=test/file.xml doc=test/docs.html' mocha -w -t 10000 -g 'should handle async connect disconnect' -R mocha-multi lib/**.test.js",
     "changelog": "github-changes --use-commit-body --order-semver  --o $(node -p 'process.env.npm_package_repository_url.split(\"/\")[3];') --r $(node -p 'a=process.env.npm_package_repository_url.split(\"/\");a[a.length-1].split(\".\")[0]') --token $CHANGELOG_GITHUB_TOKEN_FG -f CHANGELOG.md",
     "changelog-git": "npm run changelog && git add CHANGELOG.md && git commit -m 'docs(changelog): updated' && git push origin master",
