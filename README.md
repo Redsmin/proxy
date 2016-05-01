@@ -10,7 +10,6 @@
 
 
 - [Installation - Getting started](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from-)
-- [Changelog](/CHANGELOG.md)
 - [Environment variables options](#EnvironmentVariablesOptions)
 - [Is the communication safe between my server and Redsmin? (Yes)](#CommunicationSafety)
 - How to start Redsmin proxy
@@ -40,6 +39,7 @@
 - [How to uninstall Redsmin Proxy](#Uninstall)
 - [Throubleshooting](#troubleshooting)
   - [Ready check failed: NOAUTH Authentication required.](#noauth)
+- [Changelog](/CHANGELOG.md)
 
 We announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin), our [Facebook page](https://www.facebook.com/redis.redsmin) and [Redis Weekly Newsletter](http://redisweekly.com).
 
