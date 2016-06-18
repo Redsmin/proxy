@@ -126,6 +126,7 @@ If you want to leverage docker [auto-restart docker feature](https://docs.docker
 ##### MacOS, Debian/Ubuntu
 
 ```bash
+npm install redsmin --global
 REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token" redsmin
 ```
 
@@ -133,6 +134,7 @@ REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token" redsmin
 ##### Windows
 
 ```bash
+npm install redsmin --global
 set REDIS_URI="redis://127.0.0.1:6379" 
 set REDSMIN_KEY="redsmin-token"
 redsmin
@@ -148,6 +150,7 @@ redsmin
 ##### MacOS, Debian/Ubuntu
 
 ```bash
+npm install redsmin --global
 REDIS_URI="redis://127.0.0.1:6379" REDIS_AUTH="auth-pass" REDSMIN_KEY="redsmin-token" redsmin
 ```
 
@@ -155,6 +158,7 @@ REDIS_URI="redis://127.0.0.1:6379" REDIS_AUTH="auth-pass" REDSMIN_KEY="redsmin-t
 ##### Windows
 
 ```bash
+npm install redsmin --global
 set REDIS_URI="redis://127.0.0.1:6379" 
 set REDIS_AUTH="auth-pass" 
 set REDSMIN_KEY="redsmin-token"
@@ -170,6 +174,7 @@ redsmin
 ##### MacOS, Debian/Ubuntu
 
 ```bash
+npm install redsmin --global
 REDIS_URI="/tmp/redis.sock" REDSMIN_KEY="5517e20046f4c7530d000357" redsmin
 ```
 
@@ -177,6 +182,7 @@ REDIS_URI="/tmp/redis.sock" REDSMIN_KEY="5517e20046f4c7530d000357" redsmin
 ##### Windows
 
 ```bash
+npm install redsmin --global
 set REDIS_URI="/tmp/redis.sock" 
 set REDSMIN_KEY="5517e20046f4c7530d000357"
 redsmin
