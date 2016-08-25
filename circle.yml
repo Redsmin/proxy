@@ -1,4 +1,6 @@
 machine:
+  node:
+    version: 6.3
   services:
     - docker
   # Build image, this must not be changed

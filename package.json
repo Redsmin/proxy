@@ -57,7 +57,7 @@
     "sinon": "^1.14.1"
   },
   "engines": {
-    "node": ">=0.8"
+    "node": "6"
   },
   "engineStrict": true,
   "repository": {
