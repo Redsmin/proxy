@@ -50,7 +50,6 @@
   "dependencies": {
     "backoff": "^2.4.1",
     "common-env": "^6.0.0",
-    "growl": "^1.9.2",
     "lodash": "^4.15.0",
     "update-notifier": "^1.0.2",
     "winston": "^2.1.1"
@@ -60,9 +59,8 @@
     "check-build": "^2.8.2",
     "conventional-changelog-cli": "^1.2.0",
     "coveralls": "^2.11.12",
-    "growl": "~1.5.1",
     "mocha": "^3.0.2",
-    "mocha-multi": "^0.6.0",
+    "mocha-multi": "^0.9.1",
     "nyc": "^8.1.0",
     "sinon": "^1.14.1",
     "updtr": "^0.2.1"
