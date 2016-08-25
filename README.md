@@ -1,7 +1,8 @@
 ## Redsmin Proxy — Securely connect behind the firewall (or local) Redis servers to [Redsmin](https://redsmin.com)
 
-[![Circle CI](https://img.shields.io/circleci/project/Redsmin/proxy/master.svg)](https://circleci.com/gh/Redsmin/proxy) ![Dl](https://img.shields.io/npm/dt/redsmin.svg) ![Version](https://img.shields.io/npm/v/redsmin.svg) [![Docker Hub](http://img.shields.io/badge/docker-hub-22b8eb.svg?style=flat)](https://hub.docker.com/r/redsmin/proxy/) [![Docker hub](https://img.shields.io/docker/pulls/redsmin/proxy.svg)](https://hub.docker.com/r/redsmin/proxy/)
+[![Build Status](https://img.shields.io/circleci/project/Redsmin/proxy.svg)](https://circleci.com/gh/Redsmin/proxy/) [![Coverage Status](https://img.shields.io/coveralls/Redsmin/proxy/master.svg)](https://coveralls.io/github/Redsmin/proxy?branch=master) [![Deps](	https://img.shields.io/david/Redsmin/proxy.svg)](https://david-dm.org/Redsmin/proxy) [![NPM version](https://img.shields.io/npm/v/redsmin.svg)](http://badge.fury.io/js/redsmin) [![Downloads](http://img.shields.io/npm/dm/redsmin.svg)](https://www.npmjs.com/package/redsmin) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg) [![Docker Hub](http://img.shields.io/badge/docker-hub-22b8eb.svg?style=flat)](https://hub.docker.com/r/redsmin/proxy/) [![Docker hub](https://img.shields.io/docker/pulls/redsmin/proxy.svg)](https://hub.docker.com/r/redsmin/proxy/)
 [![Support](http://img.shields.io/badge/redsmin-support-0690fa.svg?style=flat)](https://redsmin.uservoice.com/) [![Follow](https://img.shields.io/twitter/follow/redsmin.svg?style=social)](https://twitter.com/Redsmin)
+
 
 <p align="center">
 <a target="_blank" href="https://redsmin.com"><img style="width:100%" src="docs/redsmin-proxy.png"></a>
@@ -72,7 +73,7 @@ Yes, Redsmin and Redsmin proxy communicate through a secure connection using the
 #### How to start Redsmin proxy
 
 <a name="StartWithDocker"></a>
-##### Docker 
+##### Docker
 
 
 <a name="StartWithDockerAndConnectToALocalRedis"></a>
@@ -93,7 +94,7 @@ docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=YOUR_REDSMIN_KEY -e REDI
 ```
 
 <a name="StartWithDockerAndConnectToNetworkWideRedis"></a>
-###### Start and connect Redsmin proxy to an network-wide available Redis 
+###### Start and connect Redsmin proxy to an network-wide available Redis
 
 ```bash
 docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=YOUR_REDSMIN_KEY -e REDIS_URI="redis://192.168.3.50:6379" redsmin/proxy
@@ -102,7 +103,7 @@ docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=YOUR_REDSMIN_KEY -e REDI
 Where `redis://192.168.3.50:6379` will be the ip address and port of the running Redis server and `YOUR_REDSMIN_KEY` is your [Redsmin key](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from).
 
 <a name="StartWithDockerAndConnectToARedisContainer"></a>
-###### Start and connect Redsmin proxy to a Redis container 
+###### Start and connect Redsmin proxy to a Redis container
 
 Let first say you've started a Redis container:
 
@@ -135,7 +136,7 @@ REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token" redsmin
 
 ```bash
 npm install redsmin --global
-set REDIS_URI="redis://127.0.0.1:6379" 
+set REDIS_URI="redis://127.0.0.1:6379"
 set REDSMIN_KEY="redsmin-token"
 redsmin
 
@@ -159,8 +160,8 @@ REDIS_URI="redis://127.0.0.1:6379" REDIS_AUTH="auth-pass" REDSMIN_KEY="redsmin-t
 
 ```bash
 npm install redsmin --global
-set REDIS_URI="redis://127.0.0.1:6379" 
-set REDIS_AUTH="auth-pass" 
+set REDIS_URI="redis://127.0.0.1:6379"
+set REDIS_AUTH="auth-pass"
 set REDSMIN_KEY="redsmin-token"
 redsmin
 ```
@@ -183,7 +184,7 @@ REDIS_URI="/tmp/redis.sock" REDSMIN_KEY="5517e20046f4c7530d000357" redsmin
 
 ```bash
 npm install redsmin --global
-set REDIS_URI="/tmp/redis.sock" 
+set REDIS_URI="/tmp/redis.sock"
 set REDSMIN_KEY="5517e20046f4c7530d000357"
 redsmin
 ```
@@ -205,9 +206,9 @@ First create a json configuration file, for instance  `/etc/redsmin.json`:
 }
 ```
 
-Then start redsmin proxy with: 
+Then start redsmin proxy with:
 
-##### MacOS, Debian/Ubuntu 
+##### MacOS, Debian/Ubuntu
 
 ```bash
 CONFIG_FILE="/etc/redsmin.json" redsmin
@@ -225,7 +226,7 @@ redsmin
 <a name="connectMultipleRedis">
 #### How to connect multiple Redis from the same server to Redsmin
 
-##### MacOS, Debian/Ubuntu 
+##### MacOS, Debian/Ubuntu
 
 ```bash
 REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token1" redsmin &
@@ -237,19 +238,19 @@ REDIS_URI="redis://127.0.0.1:6382" REDSMIN_KEY="redsmin-token4" redsmin &
 ##### Windows
 
 ```bash
-set REDIS_URI="redis://127.0.0.1:6379" 
+set REDIS_URI="redis://127.0.0.1:6379"
 set REDSMIN_KEY="redsmin-token1"
 START /B redsmin
 
-set REDIS_URI="redis://127.0.0.1:6380" 
+set REDIS_URI="redis://127.0.0.1:6380"
 set REDSMIN_KEY="redsmin-token2"
 START /B redsmin
 
-set REDIS_URI="redis://127.0.0.1:6381" 
+set REDIS_URI="redis://127.0.0.1:6381"
 set REDSMIN_KEY="redsmin-token3"
 START /B redsmin
 
-set REDIS_URI="redis://127.0.0.1:6382" 
+set REDIS_URI="redis://127.0.0.1:6382"
 set REDSMIN_KEY="redsmin-token4"
 START /B redsmin
 ```
@@ -290,10 +291,10 @@ On MacOS, Ubuntu/Debian, the simplest way is to use [screen](http://www.rackaid.
 # start screen
 screen
 # start redsmin-proxy
-REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token1" redsmin 
+REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token1" redsmin
 # Ctrl+A+D to detach from screen
 # and then to reattach to the screen session:
-screen -r 
+screen -r
 ```
 
 <a name="keepRedsminProxyUpWithAProcessManager"></a>
@@ -317,7 +318,7 @@ Redsmin proxy connects to `ssl.redsmin.com` on port `993` with a secure [TLS soc
 <a name="Uninstall"></a>
 #### How to uninstall Redsmin Proxy
 
-##### MacOS, Debian/Ubuntu 
+##### MacOS, Debian/Ubuntu
 
 ```bash
 npm uninstall redsmin -g
