@@ -20,15 +20,26 @@
   },
   "scripts": {
     "start": "node ./bin/redsmin",
-    "ci":"npm run test && npm run check-build",
+    "ci": "npm run test && npm run check-build",
     "test": "multi='spec=- xunit=test/file.xml doc=test/docs.html' nyc --all --statements=74 --lines=75 --functions=70 --branches=57 --check-coverage --reporter=lcov --reporter=cobertura --report-dir=test/coverage -- mocha -t 5000 -R mocha-multi $(find lib -name '*.test.js')",
+    "send-coverage": "cat ./test/coverage/lcov.info | coveralls",
     "test-watch": "multi='spec=- xunit=test/file.xml doc=test/docs.html' mocha -w -t 10000 -g 'should handle async connect disconnect' -R mocha-multi lib/**.test.js",
-    "changelog": "github-changes --use-commit-body --order-semver  --o $(node -p 'process.env.npm_package_repository_url.split(\"/\")[3];') --r $(node -p 'a=process.env.npm_package_repository_url.split(\"/\");a[a.length-1].split(\".\")[0]') --token $CHANGELOG_GITHUB_TOKEN_FG -f CHANGELOG.md",
+    "update": "updtr",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "changelog-git": "npm run changelog && git add CHANGELOG.md && git commit -m 'docs(changelog): updated' && git push origin master",
     "check-build": "check-build"
   },
   "bin": {
     "redsmin": "./bin/redsmin"
+  },
+  "nyc": {
+    "exclude": [
+      "node_modules",
+      "dist",
+      "test/**",
+      "webpack.config.js",
+      "*.js"
+    ]
   },
   "licenses": [
     {
@@ -38,23 +49,23 @@
   ],
   "dependencies": {
     "backoff": "^2.4.1",
-    "common-env": "5.*.*",
-    "lodash": "^4.0.0",
-    "update-notifier": "^0.6.3",
+    "common-env": "^5.2.1",
+    "growl": "^1.9.2",
+    "update-notifier": "^1.0.2",
+    "lodash": "^4.15.0",
     "winston": "^2.1.1"
   },
   "devDependencies": {
-    "chai": "^2.2.0",
-    "check-build": "*",
-    "github-changes": "^1.0.0",
+    "chai": "^3.5.0",
+    "check-build": "^2.8.2",
+    "conventional-changelog-cli": "^1.2.0",
+    "coveralls": "^2.11.12",
     "growl": "~1.5.1",
-    "grunt": "~0.4.1",
-    "grunt-cli": "~0.1.9",
-    "mocha": "^2.2.1",
+    "mocha": "^3.0.2",
     "mocha-multi": "^0.6.0",
-    "nodeunit": "~0.7.4",
-    "nyc": "^6.4.0",
-    "sinon": "^1.14.1"
+    "nyc": "^8.1.0",
+    "sinon": "^1.14.1",
+    "updtr": "^0.2.1"
   },
   "engines": {
     "node": "6"

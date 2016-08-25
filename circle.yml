@@ -6,6 +6,7 @@ machine:
   # Build image, this must not be changed
   environment:
     image: redsmin/proxy:$CIRCLE_BRANCH
+    COVERALLS_SERVICE_NAME: circleci
 
 dependencies:
   cache_directories:
@@ -14,7 +15,8 @@ dependencies:
   # Build docker image
   override:
     - npm install
-    - npm test
+    - npm run test
+    - npm run send-coverage
     - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
     - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
     - docker build -t $image .
