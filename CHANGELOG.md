@@ -1,3 +1,22 @@
+<a name="4.0.0"></a>
+# 4.0.0 (2016-08-25)
+
+* docs(README) ([3f82c6b](https://github.com/Redsmin/proxy/commit/3f82c6b))
+* docs(README) ([31c0fc8](https://github.com/Redsmin/proxy/commit/31c0fc8))
+* docs(README) ([283bdb7](https://github.com/Redsmin/proxy/commit/283bdb7))
+* fix(check-build) ([7ccd199](https://github.com/Redsmin/proxy/commit/7ccd199))
+* fix(package) ([ff55e06](https://github.com/Redsmin/proxy/commit/ff55e06))
+* Release v4.0.0. ([b7151f8](https://github.com/Redsmin/proxy/commit/b7151f8))
+* Update README.md ([2d65bb6](https://github.com/Redsmin/proxy/commit/2d65bb6))
+* Update README.md ([b9f61f1](https://github.com/Redsmin/proxy/commit/b9f61f1))
+* fix(Endpoint): don't log too much ([acdd7fa](https://github.com/Redsmin/proxy/commit/acdd7fa))
+* fix(package): removed deamonize ([9cf5f6d](https://github.com/Redsmin/proxy/commit/9cf5f6d))
+* feat(dips): updated dependencies ([4df19ae](https://github.com/Redsmin/proxy/commit/4df19ae))
+* feat(node): upgrade to node v6 ([9a7fc7e](https://github.com/Redsmin/proxy/commit/9a7fc7e))
+* docs(changelog): updated ([ada20b9](https://github.com/Redsmin/proxy/commit/ada20b9))
+
+
+
 <a name="3.0.0"></a>
 # 3.0.0 (2016-04-11)
 
