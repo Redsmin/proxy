@@ -83,7 +83,7 @@ Yes, Redsmin and Redsmin proxy communicate through a secure connection using the
 Let say you started `redis-server` on your machine and then want to start redsmin-proxy from docker. **If you are on MacOSX or Windows the following command won't work** (if you are on Linux the following line will work):
 
 ```bash
-docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=YOUR_REDSMIN_KEY -e REDIS_URI="redis://127.0.0.1:6379" redsmin/proxy
+docker run -it --rm --net=host --name redsmin-proxy -e REDSMIN_KEY=YOUR_REDSMIN_KEY -e REDIS_URI="redis://127.0.0.1:6379" redsmin/proxy
 ```
 
 It does not work because on non-linux environment the docker daemon is running inside a VM and your `redis-server` is running on your host machine, thus accessing 127.0.0.1 from the docker daemon will simply hit the VM loopback.
