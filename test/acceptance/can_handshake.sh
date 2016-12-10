@@ -13,14 +13,16 @@ alias getCProxyLog="docker logs $CPROXY_NAME 2>&1"
 
 function cstop-all(){
   docker stop $CREDIS_NAME $CPROXY_NAME &> /dev/null
+  # because -d & --rm are conflicting in docker v1.12- (#painful)
+  docker rm $CREDIS_NAME $CPROXY_NAME &> /dev/null
 }
 
 # clean containers (just in case)
 cstop-all
 
 # start redsmin proxy in background with token, forward output to file
-CREDIS=$(docker run --name my-redis -d --rm redis)
-CPROXY=$(docker run -d --rm --name redsmin-proxy --link my-redis:local-redis -e REDSMIN_KEY=$REDSMIN_KEY -e REDIS_URI="redis://local-redis:6379" redsmin/proxy)
+CREDIS=$(docker run -d --name my-redis redis)
+CPROXY=$(docker run -d --name redsmin-proxy --link my-redis:local-redis -e REDSMIN_KEY=$REDSMIN_KEY -e REDIS_URI="redis://local-redis:6379" redsmin/proxy)
 
 # wait for 5 seconds
 sleep 5
