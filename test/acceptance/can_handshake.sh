@@ -24,8 +24,8 @@ cstop-all
 CREDIS=$(docker run -d --name my-redis redis)
 CPROXY=$(docker run -d --name redsmin-proxy --link my-redis:local-redis -e REDSMIN_KEY=$REDSMIN_KEY -e REDIS_URI="redis://local-redis:6379" redsmin/proxy)
 
-# wait for 5 seconds
-sleep 5
+# wait for 10 seconds
+sleep 10
 
 # be sure redis is still up
 IS_REDIS_UP=$(listContainerIds | grep $CREDIS | trim)
@@ -36,12 +36,13 @@ IS_PROXY_UP=$(listContainerIds | grep $CPROXY | trim)
 [[ -z $IS_PROXY_UP ]] && echo "❌  Proxy down" && exit 1
 
 # look at redsmin-proxy logs
-HAS_HANDSHAKED=$(getCProxyLog | grep "Handshake succeeded" | trim)
-[[ -z $HAS_HANDSHAKED ]] && echo "❌  Proxy could not handshake" && getCProxyLog && exit 1
+CPROXY_LOG=`getCProxyLog`
+HAS_HANDSHAKED=$(echo $CPROXY_LOG | grep "Handshake succeeded" | trim)
+[[ -z $HAS_HANDSHAKED ]] && echo "❌  Proxy could not handshake" && echo $CPROXY_LOG && exit 1
 
 # print info
 echo "👍  Everything's good"
-getCProxyLog
+echo $CPROXY_LOG
 
 # stop container
 cstop-all
