@@ -45,4 +45,4 @@ echo "👍  Everything's good"
 echo $CPROXY_LOG
 
 # stop container
-cstop-all
+cstop-all || true
