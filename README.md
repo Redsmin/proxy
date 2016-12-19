@@ -133,14 +133,22 @@ REDIS_URI="redis://127.0.0.1:6379" REDSMIN_KEY="redsmin-token" redsmin
 ```
 
 <a name="StartOnWindows"></a>
-##### Windows
+##### Windows (PowerShell)
+
+```bash
+npm install redsmin --global
+$env:REDIS_URI="redis://127.0.0.1:6379"
+$env:REDSMIN_KEY="redsmin-token"
+redsmin
+```
+
+##### Windows (CMD.exe)
 
 ```bash
 npm install redsmin --global
 set REDIS_URI="redis://127.0.0.1:6379"
 set REDSMIN_KEY="redsmin-token"
 redsmin
-
 ```
 
 --------------------------------------------------------------------------------------------------
