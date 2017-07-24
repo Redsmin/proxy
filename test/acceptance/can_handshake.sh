@@ -35,6 +35,9 @@ IS_REDIS_UP=$(listContainerIds | grep $CREDIS | trim)
 IS_PROXY_UP=$(listContainerIds | grep $CPROXY | trim)
 [[ -z $IS_PROXY_UP ]] && echo "❌  Proxy down" && exit 1
 
+# wait for 5 seconds
+sleep 5
+
 # look at redsmin-proxy logs
 CPROXY_LOG=`getCProxyLog`
 HAS_HANDSHAKED=$(echo $CPROXY_LOG | grep "Handshake succeeded" | trim)
