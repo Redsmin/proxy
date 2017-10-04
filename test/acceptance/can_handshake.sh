@@ -12,13 +12,20 @@ alias listContainerIds="docker ps -q --no-trunc"
 alias getCProxyLog="docker logs $CPROXY_NAME 2>&1"
 
 function cstop-all(){
-  docker stop $CREDIS_NAME $CPROXY_NAME &> /dev/null
+  docker stop -t 20 $CREDIS_NAME $CPROXY_NAME &> /dev/null
   # because -d & --rm are conflicting in docker v1.12- (#painful)
   docker rm $CREDIS_NAME $CPROXY_NAME &> /dev/null
 }
 
+function exit-error(){
+  cstop-all
+  exit 1
+}
+
 # clean containers (just in case)
 cstop-all
+
+sleep 25
 
 # start redsmin proxy in background with token, forward output to file
 CREDIS=$(docker run -d --name my-redis redis)
@@ -29,19 +36,19 @@ sleep 10
 
 # be sure redis is still up
 IS_REDIS_UP=$(listContainerIds | grep $CREDIS | trim)
-[[ -z $IS_REDIS_UP ]] && echo "❌  Redis down" && exit 1
+[[ -z $IS_REDIS_UP ]] && echo "❌  Redis down" && exit-error
 
 # be sure proxy is still up
 IS_PROXY_UP=$(listContainerIds | grep $CPROXY | trim)
-[[ -z $IS_PROXY_UP ]] && echo "❌  Proxy down" && exit 1
+[[ -z $IS_PROXY_UP ]] && echo "❌  Proxy down" && exit-error
 
-# wait for 5 seconds
-sleep 5
+# wait for 10 seconds
+sleep 10
 
 # look at redsmin-proxy logs
 CPROXY_LOG=`getCProxyLog`
 HAS_HANDSHAKED=$(echo $CPROXY_LOG | grep "Handshake succeeded" | trim)
-[[ -z $HAS_HANDSHAKED ]] && echo "❌  Proxy could not handshake" && echo $CPROXY_LOG && exit 1
+[[ -z $HAS_HANDSHAKED ]] && echo "❌  Proxy could not handshake" && echo $CPROXY_LOG && exit-error
 
 # print info
 echo "👍  Everything's good"
