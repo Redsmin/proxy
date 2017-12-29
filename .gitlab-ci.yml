@@ -1,3 +1,13 @@
+image: node:8
+
+before_script:
+# Install dependencies
+- npm install
+
+test:app:
+  script:
+  - npm test
+
 job:on-schedule:
   only:
     - schedules
