@@ -43,7 +43,7 @@ IS_PROXY_UP=$(listContainerIds | grep $CPROXY | trim)
 [[ -z $IS_PROXY_UP ]] && echo "❌  Proxy down" && exit-error
 
 # wait for 10 seconds
-sleep 10
+sleep 15
 
 # look at redsmin-proxy logs
 CPROXY_LOG=`getCProxyLog`
