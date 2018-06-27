@@ -21,7 +21,7 @@ var jsonPackage = JSON.parse(fs.readFileSync(path.resolve(__dirname, './package.
 
 var Endpoint = require('./lib/Endpoint')(log, jsonPackage, tls, process);
 
-var RedisClient = require('./lib/RedisClient')(log, net);
+var RedisClient = require('./lib/RedisClient')(log, net, tls);
 
 var RedsminProxy = require('./lib/Proxy')(config, RedisClient, Endpoint);
 
