@@ -324,7 +324,6 @@ After=network.target
 
 [Service]
 Type=simple
-PIDFile=/var/run/redsmin.pid
 Environment=REDIS_URI=redis://127.0.0.1:6379 REDSMIN_KEY=your-token-here
 ExecStart=/usr/bin/redsmin $REDIS_URI $REDSMIN_KEY
 TimeoutStartSec=infinity
