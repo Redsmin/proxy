@@ -1,4 +1,4 @@
-## Redsmin Proxy — Securely connect behind the firewall (or local) Redis servers to [Redsmin](https://redsmin.com)
+## Redsmin Proxy — Securely connect behind the firewall (or localhost) Redis servers to [Redsmin](https://redsmin.com)
 
 [![Build Status](https://img.shields.io/circleci/project/github/Redsmin/proxy.svg)](https://circleci.com/gh/Redsmin/proxy/) [![Coverage Status](https://img.shields.io/coveralls/Redsmin/proxy/master.svg)](https://coveralls.io/github/Redsmin/proxy?branch=master) <!-- [![Deps](	https://img.shields.io/david/Redsmin/proxy.svg)](https://david-dm.org/Redsmin/proxy) --> [![Support](http://img.shields.io/badge/redsmin-support-0690fa.svg?style=flat)](https://redsmin.uservoice.com/) [![Follow](https://img.shields.io/twitter/follow/redsmin.svg?style=social)](https://twitter.com/Redsmin)
 
