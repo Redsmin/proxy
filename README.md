@@ -43,7 +43,7 @@
   - [Ready check failed: NOAUTH Authentication required.](#noauth)
 - [Changelog](/CHANGELOG.md)
 
-We announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin), our [Facebook page](https://www.facebook.com/redis.redsmin) and [Redis Weekly Newsletter](http://redisweekly.com).
+We announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin), our [Facebook page](https://www.facebook.com/redis.redsmin).
 
 --------------------------------------------------------------------------------------------------
 
