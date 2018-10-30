@@ -27,7 +27,8 @@
     "update": "updtr",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "changelog-git": "npm run changelog && git add CHANGELOG.md && git commit -m 'docs(changelog): updated' && git push origin master",
-    "check-build": "check-build"
+    "check-build": "check-build",
+    "release-patch": "npm run ci && npm-release patch && npm run changelog-git"
   },
   "bin": {
     "redsmin": "./bin/redsmin"
@@ -53,6 +54,7 @@
     "common-env": "^6.0.0",
     "debug": "^4.0.1",
     "lodash": "^4.15.0",
+    "npm-release": "^1.0.0",
     "update-notifier": "^1.0.2",
     "winston": "^2.1.1"
   },
