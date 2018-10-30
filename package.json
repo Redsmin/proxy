@@ -37,6 +37,7 @@
       "node_modules",
       "dist",
       "test/**",
+      "*.test.js",
       "webpack.config.js",
       "*.js"
     ]
