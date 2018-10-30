@@ -13,34 +13,35 @@
 
 - [Installation - Getting started](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from-)
 - [Environment variables options](#environment-variables-options)
-- [Is the communication safe between my server and Redsmin? (Yes)](#CommunicationSafety)
+- [Is the communication safe between my server and Redsmin? (Yes)](#is-the-communication-safe-between-my-server-and-redsmin-yes)
 - How to start Redsmin proxy
-  - [on Docker](#StartWithDocker)
-    -  [Start and connect Redsmin proxy to a local Redis server](#StartWithDockerAndConnectToALocalRedis)
-    -  [Start and connect Redsmin proxy to an network-wide available Redis](#StartWithDockerAndConnectToNetworkWideRedis)
-    -  [Start and connect Redsmin proxy to a Redis container](#StartWithDockerAndConnectToARedisContainer)
-    -  [Docker auto-restart](#StartWithDockerAndUseAutoRestart)
-  - [on Mac OS X](#StartOnMacOSDebianUbuntu)
-  - [on Debian/Ubuntu, *nix](#StartOnMacOSDebianUbuntu)
-  - [on Windows](#StartOnWindows)
+  - [on Docker](#docker)
+    -  [Start and connect Redsmin proxy to a local Redis server](#start-and-connect-redsmin-proxy-to-a-local-redis-server)
+    -  [Start and connect Redsmin proxy to an network-wide available Redis](#start-and-connect-redsmin-proxy-to-an-network-wide-available-redis)
+    -  [Start and connect Redsmin proxy to a Redis container](#start-and-connect-redsmin-proxy-to-a-redis-container)
+    -  [Docker auto-restart](#docker-auto-restart)
+  - [on Mac OS X](#macos-debianubuntu)
+  - [on Debian/Ubuntu, *nix](#macos-debianubuntu)
+  - [on Windows](#windows-powershell)
   - with a password protected redis
     - [Mac OS X](#StartWithPasswordProtectedRedisUnix)
     - [Debian/Ubuntu, *nix](#StartWithPasswordProtectedRedisUnix)
     - [Windows](#StartWithPasswordProtectedRedisWindows)
   - with a redis listening on a unix-socket
-    - [Mac OS X](#StartWithRedisUnixSocketUnix)
-    - [Debian/Ubuntu, *nix](#StartWithRedisUnixSocketUnix)
-    - [Windows](#StartWithRedisUnixSocketWindows)
-  - [reading a configuration file](#startWithConfigurationFile)
-- [How to connect multiple Redis from the same server to Redsmin](#connectMultipleRedis)
+    - [Mac OS X](#how-to-start-redsmin-proxy-with-a-redis-listening-on-a-unix-socket)
+    - [Debian/Ubuntu, *nix](#how-to-start-redsmin-proxy-with-a-redis-listening-on-a-unix-socket)
+    - [Windows](#how-to-start-redsmin-proxy-with-a-redis-listening-on-a-unix-socket)
+  - [reading a configuration file](#how-to-start-redsmin-proxy-reading-a-configuration-file)
+- [How to connect multiple Redis from the same server to Redsmin](#macos-debianubuntu-4)
 - How to keep redsmin proxy up once I disconnect
-  - [with nohup](#keepRedsminProxyUpWithNohup)
-  - [with screen](#keepRedsminProxyUpWithScreen)
-  - [with a process manager](#keepRedsminProxyUpWithAProcessManager)
-- [I'm behind a firewall, what rule should I add?](#RuleBehindTheFirewall)
-- [How to uninstall Redsmin Proxy](#Uninstall)
-- [Throubleshooting](#troubleshooting)
-  - [Ready check failed: NOAUTH Authentication required.](#noauth)
+  - [with nohup](#with-nohup)
+  - [with screen](#with-screen)
+  - [with a process manager](#with-a-process-manager)
+  - [with systemd](#with-systemd)
+- [I'm behind a firewall, what rule should I add?](#im-behind-a-firewall-what-rule-should-i-add)
+- [How to uninstall Redsmin Proxy](#how-to-uninstall-redsmin-proxy)
+- [Throubleshooting](#throubleshooting)
+  - [Ready check failed: NOAUTH Authentication required.](#ready-check-failed-noauth-authentication-required)
 - [Changelog](/CHANGELOG.md)
 
 We announce changes on our Twitter account [@redsmin](https://twitter.com/redsmin), our [Facebook page](https://www.facebook.com/redis.redsmin).
@@ -240,6 +241,7 @@ redsmin
 --------------------------------------------------------------------------------------------------
 
 <a name="connectMultipleRedis">
+  
 #### How to connect multiple Redis from the same server to Redsmin
 
 ##### MacOS, Debian/Ubuntu
@@ -320,7 +322,7 @@ But you could also use [Upstart](http://upstart.ubuntu.com/), [systemd](http://w
 
 On Windows you will need to [create a service](http://support.microsoft.com/en-us/kb/251192) or use [pm2](https://github.com/Unitech/PM2).
 
-**Using Systemd**
+## With Systemd
 
 Create the service at `/etc/systemd/system/redsmin.service`
 
