@@ -337,6 +337,8 @@ Reload systemd by `systemctl daemon-reload`.
 
 You can now start/stop/restart redsmin like any other systemd service, like `systemctl start redsmin`.
 
+**We will happily merge into this repository any pull-request describing a configuration file for one of the above process runner (or any other one).**
+
 --------------------------------------------------------------------------------------------------
 
 <a name="RuleBehindTheFirewall"></a>
