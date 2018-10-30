@@ -12,7 +12,7 @@
 
 
 - [Installation - Getting started](https://redsmin.uservoice.com/knowledgebase/articles/121169-can-i-manage-redis-instances-only-accessible-from-)
-- [Environment variables options](#EnvironmentVariablesOptions)
+- [Environment variables options](#environment-variables-options)
 - [Is the communication safe between my server and Redsmin? (Yes)](#CommunicationSafety)
 - How to start Redsmin proxy
   - [on Docker](#StartWithDocker)
