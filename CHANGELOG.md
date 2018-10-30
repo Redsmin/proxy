@@ -1,3 +1,54 @@
+<a name="4.1.0"></a>
+# 4.1.0 (2018-10-30)
+
+* Release v4.1.0. ([1f112a5](https://github.com/Redsmin/proxy/commit/1f112a5))
+
+
+
+<a name="4.0.2"></a>
+## 4.0.2 (2018-10-30)
+
+* Add Systemd script example ([e85eee4](https://github.com/Redsmin/proxy/commit/e85eee4))
+* Add test for TLS connect ([95d09df](https://github.com/Redsmin/proxy/commit/95d09df))
+* feat(gitlab) ([968d2c4](https://github.com/Redsmin/proxy/commit/968d2c4))
+* fix(test) ([d4dc333](https://github.com/Redsmin/proxy/commit/d4dc333))
+* fix(test) ([7a80f5d](https://github.com/Redsmin/proxy/commit/7a80f5d))
+* Release v4.0.2. ([0f3bfee](https://github.com/Redsmin/proxy/commit/0f3bfee))
+* Reove PID ([5fa1e42](https://github.com/Redsmin/proxy/commit/5fa1e42))
+* Support TLS connection to Redis ([bb081c9](https://github.com/Redsmin/proxy/commit/bb081c9))
+* Update can_handshake.sh ([593c4be](https://github.com/Redsmin/proxy/commit/593c4be))
+* Update can_handshake.sh ([3487f1f](https://github.com/Redsmin/proxy/commit/3487f1f))
+* Update README.md ([f111d54](https://github.com/Redsmin/proxy/commit/f111d54))
+* Update README.md ([e6567d5](https://github.com/Redsmin/proxy/commit/e6567d5))
+* Update README.md ([2c0bfd1](https://github.com/Redsmin/proxy/commit/2c0bfd1))
+* Update README.md ([43031ed](https://github.com/Redsmin/proxy/commit/43031ed))
+* Update README.md ([7c09dd4](https://github.com/Redsmin/proxy/commit/7c09dd4))
+* chore: add dist file ([b5cee41](https://github.com/Redsmin/proxy/commit/b5cee41))
+* chore: add npm-release ([cfbd54f](https://github.com/Redsmin/proxy/commit/cfbd54f))
+* chore: update project ([89d7a64](https://github.com/Redsmin/proxy/commit/89d7a64))
+* chore(package): update coveralls to version 2.11.14 ([f76925c](https://github.com/Redsmin/proxy/commit/f76925c))
+* style: add prettierrc ([c640c6f](https://github.com/Redsmin/proxy/commit/c640c6f))
+* style: tls => isTLS ([2bc2dc3](https://github.com/Redsmin/proxy/commit/2bc2dc3))
+* fix: endpoint test for node v10. server.close() does not behave like it did in node v8 & node v6. ([b8f1fe1](https://github.com/Redsmin/proxy/commit/b8f1fe1))
+* fix(acceptance): use a longer timing & only ask one time for proxy log ([9368742](https://github.com/Redsmin/proxy/commit/9368742))
+* fix(ci): run tests :) ([b055228](https://github.com/Redsmin/proxy/commit/b055228))
+* doc: add docker for mac command ([69832db](https://github.com/Redsmin/proxy/commit/69832db))
+* doc: Readme ([b172b67](https://github.com/Redsmin/proxy/commit/b172b67))
+* feat(test): added acceptance test ([a215c75](https://github.com/Redsmin/proxy/commit/a215c75))
+* feat(test): added acceptance test ([78d7dc3](https://github.com/Redsmin/proxy/commit/78d7dc3))
+
+
+
+<a name="4.0.1"></a>
+## 4.0.1 (2016-08-25)
+
+* fix(deps) ([b109b91](https://github.com/Redsmin/proxy/commit/b109b91))
+* Release v4.0.1. ([79b6e52](https://github.com/Redsmin/proxy/commit/79b6e52))
+* fix(deps): common-env ([96c5ceb](https://github.com/Redsmin/proxy/commit/96c5ceb))
+* docs(changelog): updated ([f5be3c3](https://github.com/Redsmin/proxy/commit/f5be3c3))
+
+
+
 <a name="4.0.0"></a>
 # 4.0.0 (2016-08-25)
 
