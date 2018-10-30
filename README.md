@@ -314,6 +314,30 @@ But you could also use [Upstart](http://upstart.ubuntu.com/), [systemd](http://w
 
 On Windows you will need to [create a service](http://support.microsoft.com/en-us/kb/251192) or use [pm2](https://github.com/Unitech/PM2).
 
+**Using Systemd**
+
+Create the service at `/etc/systemd/system/redsmin.service`
+
+```
+[Unit]
+Description=Redsmin Proxy
+After=network.target
+
+[Service]
+Type=simple
+Environment=REDIS_URI=redis://127.0.0.1:6379 REDSMIN_KEY=your-token-here
+ExecStart=/usr/bin/redsmin $REDIS_URI $REDSMIN_KEY
+TimeoutStartSec=infinity
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Reload systemd by `systemctl daemon-reload`.
+
+You can now start/stop/restart redsmin like any other systemd service, like `systemctl start redsmin`.
+
 **We will happily merge into this repository any pull-request describing a configuration file for one of the above process runner (or any other one).**
 
 --------------------------------------------------------------------------------------------------
