@@ -95,6 +95,12 @@ So we simply need to specify the `HOST_IP` (replace it with your own local IP, y
 docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=YOUR_REDSMIN_KEY -e REDIS_URI="redis://HOST_IP:6379" redsmin/proxy
 ```
 
+On MacOSX, this should work and let redsmin-proxy connect to a Redis container on the same host:
+
+```bash
+docker run -it --rm --name redsmin-proxy -e REDSMIN_KEY=YOUR_REDSMIN_KEY -e REDIS_URI="redis://docker.for.mac.localhost:6379" redsmin/proxy
+```
+
 <a name="StartWithDockerAndConnectToNetworkWideRedis"></a>
 ###### Start and connect Redsmin proxy to an network-wide available Redis
 
