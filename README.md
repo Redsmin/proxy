@@ -154,10 +154,12 @@ redsmin
 
 ```bash
 npm install redsmin --global
-set REDIS_URI="redis://127.0.0.1:6379"
-set REDSMIN_KEY="redsmin-token"
+set REDIS_URI=redis://127.0.0.1:6379
+set REDSMIN_KEY=redsmin-token
 redsmin
 ```
+
+Note: don't use double quotes for values on windows (bad 🔴 : `set KEY="VALUE"`, good ✅ : `set KEY=VALUE`)
 
 --------------------------------------------------------------------------------------------------
 
@@ -177,11 +179,13 @@ REDIS_URI="redis://127.0.0.1:6379" REDIS_AUTH="auth-pass" REDSMIN_KEY="redsmin-t
 
 ```bash
 npm install redsmin --global
-set REDIS_URI="redis://127.0.0.1:6379"
-set REDIS_AUTH="auth-pass"
-set REDSMIN_KEY="redsmin-token"
+set REDIS_URI=redis://127.0.0.1:6379
+set REDIS_AUTH=auth-pass
+set REDSMIN_KEY=redsmin-token
 redsmin
 ```
+
+Note: don't use double quotes for values on windows (bad 🔴 : `set KEY="VALUE"`, good ✅ : `set KEY=VALUE`)
 
 --------------------------------------------------------------------------------------------------
 
@@ -201,12 +205,14 @@ REDIS_URI="/tmp/redis.sock" REDSMIN_KEY="5517e20046f4c7530d000357" redsmin
 
 ```bash
 npm install redsmin --global
-set REDIS_URI="/tmp/redis.sock"
-set REDSMIN_KEY="5517e20046f4c7530d000357"
+set REDIS_URI=/tmp/redis.sock
+set REDSMIN_KEY=5517e20046f4c7530d000357
 redsmin
 ```
 
-Note: you may need to use `sudo` to access to the socket.
+Note: 
+- don't use double quotes for values on windows (bad 🔴 : `set KEY="VALUE"`, good ✅ : `set KEY=VALUE`)
+- you may need to use `sudo` to access to the socket.
 
 --------------------------------------------------------------------------------------------------
 
@@ -257,24 +263,24 @@ REDIS_URI="redis://127.0.0.1:6382" REDSMIN_KEY="redsmin-token4" redsmin &
 
 ```bash
 set REDIS_URI="redis://127.0.0.1:6379"
-set REDSMIN_KEY="redsmin-token1"
+set REDSMIN_KEY=redsmin-token1
 START /B redsmin
 
 set REDIS_URI="redis://127.0.0.1:6380"
-set REDSMIN_KEY="redsmin-token2"
+set REDSMIN_KEY=redsmin-token2
 START /B redsmin
 
 set REDIS_URI="redis://127.0.0.1:6381"
-set REDSMIN_KEY="redsmin-token3"
+set REDSMIN_KEY=redsmin-token3
 START /B redsmin
 
 set REDIS_URI="redis://127.0.0.1:6382"
-set REDSMIN_KEY="redsmin-token4"
+set REDSMIN_KEY=redsmin-token4
 START /B redsmin
 ```
 
-
-Note: of course we could have used multiple `CONFIG_FILE` instead of environment variables.
+Note: 
+- of course we could have used multiple `CONFIG_FILE` instead of environment variables.
 
 --------------------------------------------------------------------------------------------------
 
