@@ -61,7 +61,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "check-build": "^2.8.2",
-    "conventional-changelog-cli": "^1.2.0",
+    "conventional-changelog-cli": "^2.0.25",
     "coveralls": "^2.11.14",
     "mocha": "^3.0.2",
     "mocha-multi": "^0.9.1",
