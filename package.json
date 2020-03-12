@@ -58,7 +58,7 @@
     "winston": "^2.1.1"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.2.0",
     "conventional-changelog-cli": "^1.2.0",
     "coveralls": "^2.11.14",
     "mocha": "^3.0.2",
