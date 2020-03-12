@@ -1,3 +1,38 @@
+<a name="4.1.1"></a>
+## 4.1.1 (2020-03-12)
+
+* fix ([e494f14](https://github.com/Redsmin/proxy/commit/e494f14))
+* fix ([6f5b39c](https://github.com/Redsmin/proxy/commit/6f5b39c))
+* Release v4.1.1. ([75e2731](https://github.com/Redsmin/proxy/commit/75e2731))
+* Update README.md ([683dbe0](https://github.com/Redsmin/proxy/commit/683dbe0))
+* Update README.md ([9749e65](https://github.com/Redsmin/proxy/commit/9749e65))
+* Update README.md ([3e56c5e](https://github.com/Redsmin/proxy/commit/3e56c5e))
+* fix: dep ([1f0c788](https://github.com/Redsmin/proxy/commit/1f0c788))
+* fix(package): upgrade deps ([6ae310f](https://github.com/Redsmin/proxy/commit/6ae310f))
+* chore(deps): [security] bump bl from 1.0.0 to 1.0.3 ([5b1202a](https://github.com/Redsmin/proxy/commit/5b1202a))
+* chore(deps): [security] bump brace-expansion from 1.1.1 to 1.1.11 ([5c868d6](https://github.com/Redsmin/proxy/commit/5c868d6))
+* chore(deps): [security] bump concat-stream from 1.5.1 to 1.6.2 ([60c4371](https://github.com/Redsmin/proxy/commit/60c4371))
+* chore(deps): [security] bump extend from 3.0.0 to 3.0.2 ([689c49a](https://github.com/Redsmin/proxy/commit/689c49a))
+* chore(deps): [security] bump fstream from 1.0.10 to 1.0.12 ([1726af0](https://github.com/Redsmin/proxy/commit/1726af0))
+* chore(deps): [security] bump handlebars from 4.0.5 to 4.5.3 ([ce0837b](https://github.com/Redsmin/proxy/commit/ce0837b))
+* chore(deps): [security] bump hawk from 3.1.0 to 3.1.3 ([2ef0e6d](https://github.com/Redsmin/proxy/commit/2ef0e6d))
+* chore(deps): [security] bump is-my-json-valid from 2.12.2 to 2.20.0 ([fb8677d](https://github.com/Redsmin/proxy/commit/fb8677d))
+* chore(deps): [security] bump lodash from 4.17.4 to 4.17.13 ([bd3376f](https://github.com/Redsmin/proxy/commit/bd3376f))
+* chore(deps): [security] bump lodash.template from 4.4.0 to 4.5.0 ([f74bdf8](https://github.com/Redsmin/proxy/commit/f74bdf8))
+* chore(deps): [security] bump moment from 2.10.6 to 2.24.0 ([3ce80ac](https://github.com/Redsmin/proxy/commit/3ce80ac))
+* chore(deps): [security] bump node-uuid from 1.4.3 to 1.4.8 ([133aa9d](https://github.com/Redsmin/proxy/commit/133aa9d))
+* chore(deps): [security] bump request from 2.65.0 to 2.74.0 ([dd2d7c9](https://github.com/Redsmin/proxy/commit/dd2d7c9))
+* chore(deps): [security] bump sshpk from 1.9.2 to 1.16.1 ([a1840a8](https://github.com/Redsmin/proxy/commit/a1840a8))
+* chore(deps): [security] bump tar from 2.2.1 to 2.2.2 ([1b3d25a](https://github.com/Redsmin/proxy/commit/1b3d25a))
+* chore(deps): [security] bump tough-cookie from 2.2.0 to 2.3.4 ([94b345e](https://github.com/Redsmin/proxy/commit/94b345e))
+* chore(deps): bump common-env from 6.1.0 to 6.3.0 ([e6432e9](https://github.com/Redsmin/proxy/commit/e6432e9))
+* chore(deps): bump debug from 4.0.1 to 4.1.1 ([5a0a0c9](https://github.com/Redsmin/proxy/commit/5a0a0c9))
+* chore(deps): bump lodash from 4.17.13 to 4.17.15 ([c41b8d7](https://github.com/Redsmin/proxy/commit/c41b8d7))
+* doc: updated README, removed double quotes for set env on windows ([5f652d5](https://github.com/Redsmin/proxy/commit/5f652d5))
+* docs(changelog): updated ([011849c](https://github.com/Redsmin/proxy/commit/011849c))
+
+
+
 <a name="4.1.0"></a>
 # 4.1.0 (2018-10-30)
 
