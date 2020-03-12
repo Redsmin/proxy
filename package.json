@@ -20,14 +20,13 @@
   },
   "scripts": {
     "start": "node ./bin/redsmin",
-    "ci": "npm run test && npm run check-build",
+    "ci": "npm run test",
     "test": "multi='spec=- xunit=test/file.xml doc=test/docs.html' nyc --all --statements=74 --lines=75 --functions=70 --branches=57 --check-coverage --reporter=lcov --reporter=cobertura --report-dir=test/coverage -- mocha -t 5000 -R mocha-multi $(find lib -name '*.test.js')",
     "send-coverage": "cat ./test/coverage/lcov.info | coveralls",
     "test-watch": "multi='spec=- xunit=test/file.xml doc=test/docs.html' mocha -w -t 10000 -g 'should handle async connect disconnect' -R mocha-multi lib/**.test.js",
     "update": "updtr",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "changelog-git": "npm run changelog && git add CHANGELOG.md && git commit -m 'docs(changelog): updated' && git push origin master",
-    "check-build": "check-build",
     "release-patch": "npm run ci && npm-release patch && npm run changelog-git"
   },
   "bin": {
@@ -60,7 +59,6 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "check-build": "^2.8.2",
     "conventional-changelog-cli": "^1.2.0",
     "coveralls": "^2.11.14",
     "mocha": "^3.0.2",
