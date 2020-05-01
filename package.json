@@ -27,7 +27,9 @@
     "update": "updtr",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "changelog-git": "npm run changelog && git add CHANGELOG.md && git commit -m 'docs(changelog): updated' && git push origin master",
-    "release-patch": "npm run ci && npm-release patch && npm run changelog-git"
+    "release-patch": "npm run ci && npm-release patch && npm run changelog-git",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "bin": {
     "redsmin": "./bin/redsmin"
@@ -55,7 +57,8 @@
     "lodash": "^4.15.0",
     "npm-release": "^1.0.0",
     "update-notifier": "^2.3.0",
-    "winston": "^2.1.1"
+    "winston": "^2.1.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -74,5 +77,6 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/Redsmin/proxy.git"
-  }
+  },
+  "snyk": true
 }
