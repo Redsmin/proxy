@@ -1,3 +1,18 @@
+## <small>4.1.3 (2020-05-08)</small>
+
+* Release v4.1.3. ([3716b53](https://github.com/Redsmin/proxy/commit/3716b53))
+* docs(changelog): updated ([9aaab57](https://github.com/Redsmin/proxy/commit/9aaab57))
+* docs(changelog): updated ([364e49c](https://github.com/Redsmin/proxy/commit/364e49c))
+* fix: package ([4d7dc0f](https://github.com/Redsmin/proxy/commit/4d7dc0f))
+* fix: tests ([6c5704e](https://github.com/Redsmin/proxy/commit/6c5704e))
+* chore(deps-dev): bump mocha from 3.5.0 to 3.5.3 ([c47dbbc](https://github.com/Redsmin/proxy/commit/c47dbbc))
+* chore(deps): [security] bump extend from 3.0.0 to 3.0.2 ([1bf47ce](https://github.com/Redsmin/proxy/commit/1bf47ce))
+* chore(deps): [security] bump hawk from 3.1.0 to 3.1.3 ([dd71b25](https://github.com/Redsmin/proxy/commit/dd71b25))
+* chore(deps): [security] bump is-my-json-valid from 2.12.2 to 2.20.0 ([e0712db](https://github.com/Redsmin/proxy/commit/e0712db))
+* chore(deps): bump common-env from 6.3.0 to 6.3.1 ([d14e813](https://github.com/Redsmin/proxy/commit/d14e813))
+
+
+
 ## <small>4.1.2 (2020-03-12)</small>
 
 * fix ([e6c3318](https://github.com/Redsmin/proxy/commit/e6c3318))
