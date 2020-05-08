@@ -334,25 +334,39 @@ Create the service at `/etc/systemd/system/redsmin.service`
 
 ```
 [Unit]
-Description=Redsmin Proxy
-After=network.target
+Description = Redsmin Proxy
+After = network.target
 
 [Service]
-Type=simple
-Environment=REDIS_URI=redis://127.0.0.1:6379 REDSMIN_KEY=your-token-here
-ExecStart=/usr/bin/redsmin $REDIS_URI $REDSMIN_KEY
-TimeoutStartSec=infinity
-Restart=on-abort
+Type = simple
+Environment = REDIS_URI=redis://127.0.0.1:6379 REDSMIN_KEY=your-token-here
+ExecStart = /usr/bin/redsmin $REDIS_URI $REDSMIN_KEY
+TimeoutStartSec = infinity
+Restart = on-abort
 
 [Install]
-WantedBy=multi-user.target
+WantedBy = multi-user.target
 ```
 
 Reload systemd by `systemctl daemon-reload`.
 
 You can now start/stop/restart redsmin like any other systemd service, like `systemctl start redsmin`.
 
-**We will happily merge into this repository any pull-request describing a configuration file for one of the above process runner (or any other one).**
+## With Supervisord
+
+Create a config file with these contents:
+
+```
+[program:redsmin]
+command = /usr/bin/redsmin
+autostart = true
+autorestart = true
+environment = REDIS_URI="redis://127.0.0.1:6379",REDSMIN_KEY="your-token-here"
+```
+
+Reload supervisord config by `supervisorctl reread && supervisorctl update`
+
+**We will happily merge into this repository any pull-request describing a configuration file for any other process runner.**
 
 --------------------------------------------------------------------------------------------------
 
