@@ -1,5 +1,4 @@
-<a name="4.1.2"></a>
-## 4.1.2 (2020-03-12)
+## <small>4.1.2 (2020-03-12)</small>
 
 * fix ([e6c3318](https://github.com/Redsmin/proxy/commit/e6c3318))
 * fix ([4d4bc21](https://github.com/Redsmin/proxy/commit/4d4bc21))
@@ -34,30 +33,28 @@
 
 
 
-<a name="4.1.0"></a>
-# 4.1.0 (2018-10-30)
+## 4.1.0 (2018-10-30)
 
 * Release v4.1.0. ([1f112a5](https://github.com/Redsmin/proxy/commit/1f112a5))
 
 
 
-<a name="4.0.2"></a>
-## 4.0.2 (2018-10-30)
+## <small>4.0.2 (2018-10-30)</small>
 
 * Add Systemd script example ([e85eee4](https://github.com/Redsmin/proxy/commit/e85eee4))
 * Add test for TLS connect ([95d09df](https://github.com/Redsmin/proxy/commit/95d09df))
 * feat(gitlab) ([968d2c4](https://github.com/Redsmin/proxy/commit/968d2c4))
-* fix(test) ([d4dc333](https://github.com/Redsmin/proxy/commit/d4dc333))
 * fix(test) ([7a80f5d](https://github.com/Redsmin/proxy/commit/7a80f5d))
+* fix(test) ([d4dc333](https://github.com/Redsmin/proxy/commit/d4dc333))
 * Release v4.0.2. ([0f3bfee](https://github.com/Redsmin/proxy/commit/0f3bfee))
 * Reove PID ([5fa1e42](https://github.com/Redsmin/proxy/commit/5fa1e42))
 * Support TLS connection to Redis ([bb081c9](https://github.com/Redsmin/proxy/commit/bb081c9))
 * Update can_handshake.sh ([593c4be](https://github.com/Redsmin/proxy/commit/593c4be))
 * Update can_handshake.sh ([3487f1f](https://github.com/Redsmin/proxy/commit/3487f1f))
 * Update README.md ([f111d54](https://github.com/Redsmin/proxy/commit/f111d54))
+* Update README.md ([43031ed](https://github.com/Redsmin/proxy/commit/43031ed))
 * Update README.md ([e6567d5](https://github.com/Redsmin/proxy/commit/e6567d5))
 * Update README.md ([2c0bfd1](https://github.com/Redsmin/proxy/commit/2c0bfd1))
-* Update README.md ([43031ed](https://github.com/Redsmin/proxy/commit/43031ed))
 * Update README.md ([7c09dd4](https://github.com/Redsmin/proxy/commit/7c09dd4))
 * chore: add dist file ([b5cee41](https://github.com/Redsmin/proxy/commit/b5cee41))
 * chore: add npm-release ([cfbd54f](https://github.com/Redsmin/proxy/commit/cfbd54f))
@@ -75,8 +72,7 @@
 
 
 
-<a name="4.0.1"></a>
-## 4.0.1 (2016-08-25)
+## <small>4.0.1 (2016-08-25)</small>
 
 * fix(deps) ([b109b91](https://github.com/Redsmin/proxy/commit/b109b91))
 * Release v4.0.1. ([79b6e52](https://github.com/Redsmin/proxy/commit/79b6e52))
@@ -85,8 +81,7 @@
 
 
 
-<a name="4.0.0"></a>
-# 4.0.0 (2016-08-25)
+## 4.0.0 (2016-08-25)
 
 * docs(README) ([3f82c6b](https://github.com/Redsmin/proxy/commit/3f82c6b))
 * docs(README) ([31c0fc8](https://github.com/Redsmin/proxy/commit/31c0fc8))
@@ -104,21 +99,20 @@
 
 
 
-<a name="3.0.0"></a>
-# 3.0.0 (2016-04-11)
+## 3.0.0 (2016-04-11)
 
 * docs(readme) ([36a4808](https://github.com/Redsmin/proxy/commit/36a4808))
 * feat(update-notifier) ([9a1cf50](https://github.com/Redsmin/proxy/commit/9a1cf50))
 * Release v3.0.0. ([c035acf](https://github.com/Redsmin/proxy/commit/c035acf))
-* Update README.md ([d159b92](https://github.com/Redsmin/proxy/commit/d159b92))
-* Update README.md ([e840be1](https://github.com/Redsmin/proxy/commit/e840be1))
-* Update README.md ([6b67b24](https://github.com/Redsmin/proxy/commit/6b67b24))
 * Update README.md ([ec6cf8c](https://github.com/Redsmin/proxy/commit/ec6cf8c))
+* Update README.md ([d159b92](https://github.com/Redsmin/proxy/commit/d159b92))
+* Update README.md ([6b67b24](https://github.com/Redsmin/proxy/commit/6b67b24))
+* Update README.md ([6cf5615](https://github.com/Redsmin/proxy/commit/6cf5615))
 * Update README.md ([3e732db](https://github.com/Redsmin/proxy/commit/3e732db))
 * Update README.md ([c9f47bf](https://github.com/Redsmin/proxy/commit/c9f47bf))
 * Update README.md ([5b956df](https://github.com/Redsmin/proxy/commit/5b956df))
 * Update README.md ([3d5b072](https://github.com/Redsmin/proxy/commit/3d5b072))
-* Update README.md ([6cf5615](https://github.com/Redsmin/proxy/commit/6cf5615))
+* Update README.md ([e840be1](https://github.com/Redsmin/proxy/commit/e840be1))
 * upstart service config ([7d2c548](https://github.com/Redsmin/proxy/commit/7d2c548))
 * fix(autoreconnect): disconnect Endpoint when Redis connection is lot ([abba4b0](https://github.com/Redsmin/proxy/commit/abba4b0))
 * fix(endpoint): support for node 0.8 & 0.10 ([23eb140](https://github.com/Redsmin/proxy/commit/23eb140))
@@ -127,8 +121,7 @@
 
 
 
-<a name="2.2.5"></a>
-## 2.2.5 (2016-01-25)
+## <small>2.2.5 (2016-01-25)</small>
 
 * docs(readme) ([89b4bcf](https://github.com/Redsmin/proxy/commit/89b4bcf))
 * docs(readme) ([8d7a8c1](https://github.com/Redsmin/proxy/commit/8d7a8c1))
@@ -144,8 +137,7 @@
 
 
 
-<a name="2.2.4"></a>
-## 2.2.4 (2015-11-22)
+## <small>2.2.4 (2015-11-22)</small>
 
 * docs(readme) ([f844595](https://github.com/Redsmin/proxy/commit/f844595))
 * docs(readme) ([315cde3](https://github.com/Redsmin/proxy/commit/315cde3))
@@ -160,32 +152,28 @@
 
 
 
-<a name="2.2.3"></a>
-## 2.2.3 (2015-09-15)
+## <small>2.2.3 (2015-09-15)</small>
 
 * fix(circleci) ([728b166](https://github.com/Redsmin/proxy/commit/728b166))
 * Release v2.2.3. ([0f98aa1](https://github.com/Redsmin/proxy/commit/0f98aa1))
 
 
 
-<a name="2.2.2"></a>
-## 2.2.2 (2015-09-15)
+## <small>2.2.2 (2015-09-15)</small>
 
 * fix(circleci) ([d1a7c96](https://github.com/Redsmin/proxy/commit/d1a7c96))
 * Release v2.2.2. ([fa54daa](https://github.com/Redsmin/proxy/commit/fa54daa))
 
 
 
-<a name="2.2.1"></a>
-## 2.2.1 (2015-09-15)
+## <small>2.2.1 (2015-09-15)</small>
 
 * feat(circleci) ([91b2c50](https://github.com/Redsmin/proxy/commit/91b2c50))
 * Release v2.2.1. ([5384dcd](https://github.com/Redsmin/proxy/commit/5384dcd))
 
 
 
-<a name="2.2.0"></a>
-# 2.2.0 (2015-09-15)
+## 2.2.0 (2015-09-15)
 
 * docs(readme) ([6c1c047](https://github.com/Redsmin/proxy/commit/6c1c047))
 * docs(readme) ([3806a5e](https://github.com/Redsmin/proxy/commit/3806a5e))
@@ -198,8 +186,7 @@
 
 
 
-<a name="2.1.0"></a>
-# 2.1.0 (2015-09-15)
+## 2.1.0 (2015-09-15)
 
 * docs(redsmin) ([57ad47c](https://github.com/Redsmin/proxy/commit/57ad47c))
 * docs(redsmin) ([bbfe46d](https://github.com/Redsmin/proxy/commit/bbfe46d))
@@ -210,8 +197,7 @@
 
 
 
-<a name="2.0.3"></a>
-## 2.0.3 (2015-04-23)
+## <small>2.0.3 (2015-04-23)</small>
 
 * docs(changelog) ([5eccb45](https://github.com/Redsmin/proxy/commit/5eccb45))
 * Release v2.0.3. ([9950578](https://github.com/Redsmin/proxy/commit/9950578))
@@ -219,8 +205,7 @@
 
 
 
-<a name="2.0.2"></a>
-## 2.0.2 (2015-04-09)
+## <small>2.0.2 (2015-04-09)</small>
 
 * Release v2.0.2. ([428f92c](https://github.com/Redsmin/proxy/commit/428f92c))
 * feat(package): upgrade winston to 1.x ([b477183](https://github.com/Redsmin/proxy/commit/b477183))
@@ -228,8 +213,7 @@
 
 
 
-<a name="2.0.1"></a>
-## 2.0.1 (2015-03-29)
+## <small>2.0.1 (2015-03-29)</small>
 
 * docs(changelogà ([f7b5056](https://github.com/Redsmin/proxy/commit/f7b5056))
 * docs(readme) ([a6dcec4](https://github.com/Redsmin/proxy/commit/a6dcec4))
@@ -242,8 +226,7 @@
 
 
 
-<a name="2.0.0"></a>
-# 2.0.0 (2015-03-29)
+## 2.0.0 (2015-03-29)
 
 * docs(readme) ([019abe6](https://github.com/Redsmin/proxy/commit/019abe6))
 * feat(dot files) ([72cfc2c](https://github.com/Redsmin/proxy/commit/72cfc2c))
@@ -288,37 +271,32 @@
 
 
 
-<a name="1.1.7"></a>
-## 1.1.7 (2014-04-26)
+## <small>1.1.7 (2014-04-26)</small>
 
 * Bump ([d09fcec](https://github.com/Redsmin/proxy/commit/d09fcec))
 
 
 
-<a name="1.1.6"></a>
-## 1.1.6 (2014-04-26)
+## <small>1.1.6 (2014-04-26)</small>
 
 * Bump ([a77c718](https://github.com/Redsmin/proxy/commit/a77c718))
 
 
 
-<a name="1.1.4"></a>
-## 1.1.4 (2014-04-26)
+## <small>1.1.4 (2014-04-26)</small>
 
 * [Endpoint]  Fixed an exception from Backoff library & bump to 1.1.3 ([8a34780](https://github.com/Redsmin/proxy/commit/8a34780))
 * [RedisClient] handle both connection string format, with or without redis:// ([26d69be](https://github.com/Redsmin/proxy/commit/26d69be))
 
 
 
-<a name="1.1.3"></a>
-## 1.1.3 (2014-02-22)
+## <small>1.1.3 (2014-02-22)</small>
 
 * [Unit-tests] fix ([5f4acb9](https://github.com/Redsmin/proxy/commit/5f4acb9))
 
 
 
-<a name="1.1.2"></a>
-## 1.1.2 (2014-02-22)
+## <small>1.1.2 (2014-02-22)</small>
 
 * [Changelog] for 1.1.0 ([f66484b](https://github.com/Redsmin/proxy/commit/f66484b))
 * [Endpoint] test fix ([4bb71b4](https://github.com/Redsmin/proxy/commit/4bb71b4))
@@ -328,45 +306,39 @@
 
 
 
-<a name="1.1.1"></a>
-## 1.1.1 (2013-09-03)
+## <small>1.1.1 (2013-09-03)</small>
 
 * Force close event ([349b7fa](https://github.com/Redsmin/proxy/commit/349b7fa))
 * SetKeepAlive initialDelay to 30ms ([5c9ffb8](https://github.com/Redsmin/proxy/commit/5c9ffb8))
 
 
 
-<a name="1.0.6"></a>
-## 1.0.6 (2013-09-03)
+## <small>1.0.6 (2013-09-03)</small>
 
 * 1.0.5 ([cc643ee](https://github.com/Redsmin/proxy/commit/cc643ee))
 
 
 
-<a name="1.0.5"></a>
-## 1.0.5 (2013-08-11)
+## <small>1.0.5 (2013-08-11)</small>
 
 * Readme update ([fac4891](https://github.com/Redsmin/proxy/commit/fac4891))
 
 
 
-<a name="1.0.4"></a>
-## 1.0.4 (2013-08-11)
+## <small>1.0.4 (2013-08-11)</small>
 
 * Fix add init.d #9 ([65f3dbb](https://github.com/Redsmin/proxy/commit/65f3dbb)), closes [#9](https://github.com/Redsmin/proxy/issues/9)
 * Grunt update ([cefb83c](https://github.com/Redsmin/proxy/commit/cefb83c))
 
 
 
-<a name="1.0.3"></a>
-## 1.0.3 (2013-08-11)
+## <small>1.0.3 (2013-08-11)</small>
 
 * Release v1.0.2 ([96a43d0](https://github.com/Redsmin/proxy/commit/96a43d0))
 
 
 
-<a name="1.0.1"></a>
-## 1.0.1 (2013-08-11)
+## <small>1.0.1 (2013-08-11)</small>
 
 * [0.3.1] Remove keepAlive initial-delay ([135a49f](https://github.com/Redsmin/proxy/commit/135a49f))
 * [Endpoint] clean ([753a676](https://github.com/Redsmin/proxy/commit/753a676))
@@ -377,21 +349,20 @@
 * Bump to 0.2.0 ([677c576](https://github.com/Redsmin/proxy/commit/677c576))
 * Bump to 0.2.1 ([0060aa9](https://github.com/Redsmin/proxy/commit/0060aa9))
 * Fix an special case when the proxy does not reconnect #7 ([2d72ed6](https://github.com/Redsmin/proxy/commit/2d72ed6)), closes [#7](https://github.com/Redsmin/proxy/issues/7)
-* Fixing #3 ([df2a135](https://github.com/Redsmin/proxy/commit/df2a135))
+* Fixing #3 ([df2a135](https://github.com/Redsmin/proxy/commit/df2a135)), closes [#3](https://github.com/Redsmin/proxy/issues/3)
 * jshintrc added ([05c6ab8](https://github.com/Redsmin/proxy/commit/05c6ab8))
 * Readme fix ([42323a5](https://github.com/Redsmin/proxy/commit/42323a5))
 * Readme update ([669ca11](https://github.com/Redsmin/proxy/commit/669ca11))
 * Release v1.0.1 ([dd3ae34](https://github.com/Redsmin/proxy/commit/dd3ae34))
-* Update README.md ([b8ef56f](https://github.com/Redsmin/proxy/commit/b8ef56f))
 * Update README.md ([eceed4b](https://github.com/Redsmin/proxy/commit/eceed4b))
+* Update README.md ([b8ef56f](https://github.com/Redsmin/proxy/commit/b8ef56f))
 * v0.3.0 - Implemented set_key command for one-line install ([d7a43a6](https://github.com/Redsmin/proxy/commit/d7a43a6))
 * v0.3.3 ([45b7dfa](https://github.com/Redsmin/proxy/commit/45b7dfa))
 * v0.3.4 ([69c6d9f](https://github.com/Redsmin/proxy/commit/69c6d9f))
 
 
 
-<a name="0.1.9"></a>
-## 0.1.9 (2012-10-01)
+## <small>0.1.9 (2012-10-01)</small>
 
 * [RedisClient] Better handling of Redis disconnection ([28a2060](https://github.com/Redsmin/proxy/commit/28a2060))
 * [RedisClient] Check. ([92110af](https://github.com/Redsmin/proxy/commit/92110af))
