@@ -1,3 +1,17 @@
+## 5.0.0 (2020-05-08)
+
+* Release v5.0.0. ([018532c](https://github.com/Redsmin/proxy/commit/018532c))
+
+
+
+## <small>4.1.4 (2020-05-08)</small>
+
+* Release v4.1.4. ([7d7cbb1](https://github.com/Redsmin/proxy/commit/7d7cbb1))
+* fix: docker image ([f62661c](https://github.com/Redsmin/proxy/commit/f62661c))
+* docs(changelog): updated ([597b449](https://github.com/Redsmin/proxy/commit/597b449))
+
+
+
 ## <small>4.1.3 (2020-05-08)</small>
 
 * Release v4.1.3. ([3716b53](https://github.com/Redsmin/proxy/commit/3716b53))
