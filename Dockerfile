@@ -9,7 +9,7 @@
 # TO_RUN           : docker run -it --rm --name redsmin --link redis:redis -e REDSMIN_KEY=YOUR_REDMIN_KEY -e REDIS_URI="redis://redis:6379" redsmin-proxy
 ##
 
-FROM node:6-slim
+FROM node:14-slim
 
 MAINTAINER Francois-Guillaume Ribreau <docker@fgribreau.com>
 
