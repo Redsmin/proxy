@@ -1,3 +1,11 @@
+## <small>5.0.1 (2020-05-08)</small>
+
+* Release v5.0.1. ([e8f793a](https://github.com/Redsmin/proxy/commit/e8f793a))
+* fix: logger ([700418a](https://github.com/Redsmin/proxy/commit/700418a))
+* docs(changelog): updated ([f7afdec](https://github.com/Redsmin/proxy/commit/f7afdec))
+
+
+
 ## 5.0.0 (2020-05-08)
 
 * Release v5.0.0. ([018532c](https://github.com/Redsmin/proxy/commit/018532c))
