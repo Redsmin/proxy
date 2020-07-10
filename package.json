@@ -52,7 +52,7 @@
     "backoff": "^2.4.1",
     "common-env": "^6.1.0",
     "debug": "^4.0.1",
-    "lodash": "^4.15.0",
+    "lodash": "^4.17.16",
     "npm-release": "^1.0.0",
     "update-notifier": "^4.1.0",
     "winston": "^3.2.1"
